@@ -1,0 +1,309 @@
+<h1 id="dreamhouseaurasampleapplication">DreamHouse Aura Sample Application</h1>
+
+<p>
+    <strong>IMPORTANT:</strong> The Dreamhouse App cannot be installed from this repo! This is a stripped down version, including only Apex classes, in order to demonstrate
+    <a href="https://github.com/no-stack-dub-sack/apexdox-vs-code" target="_blank" rel="noopener noreferrer">ApexDox VS Code</a>'s documentation capabilities. 
+    The only reason this page is even included, is to demonstrate the <a href="https://github.com/no-stack-dub-sack/apexdox-vs-code#extension-settings" target="_blank" rel="noopener noreferrer"><code class="inlineCode">apexdox.engine.homePagePath</code></a> setting! To install the Dreamhouse app,
+    header over to <a href="https://github.com/dreamhouseapp/dreamhouse-sfdx">https://github.com/dreamhouseapp/dreamhouse-sfdx</a> and clone the repo, following the
+    instructions there.
+</p>
+
+<p>
+    <strong>INFO:</strong> Include other non-documentation pages (other than the project home page or class groups) with the
+    <a href="https://github.com/no-stack-dub-sack/apexdox-vs-code#extension-settings" target="_blank" rel="noopener noreferrer"><code class="inlineCode">apexdox.engine.pages</code></a> setting.
+    <br />Then you can link to them like <a href="./Funny.html">this</a>.
+<p>
+
+<p><img src="./assets/logo.png" alt="dreamhouse-logo" /></p>
+
+<p>Dreamhouse is a sample application for the real estate business built on the Salesforce platform. It allows brokers
+    to manage their properties and customers to find their dream house.</p>
+
+<h2 id="tableofcontents">Table of contents</h2>
+
+<ul>
+    <li><a href="#installationinstructions">Installation instructions</a>
+
+
+        <ul>
+            <li><a href="#installingdreamhouseusingsalesforcedx">Installing DreamHouse using Salesforce DX</a></li>
+
+            <li><a href="#installingdreamhouseusinganunlockedpackage">Installing DreamHouse using an unlocked
+                    package</a></li>
+        </ul>
+    </li>
+
+    <li><a href="#codehighlights">Code highlights</a></li>
+
+    <li><a href="#additionalresources">Additional resources</a></li>
+</ul>
+
+<h2 id="installationinstructions">Installation Instructions</h2>
+
+<p>There are two ways to install DreamHouse:</p>
+
+<ul>
+    <li>Using Salesforce DX</li>
+
+    <li>Using an unlocked package</li>
+</ul>
+
+<h3 id="installingdreamhouseusingsalesforcedx">Installing DreamHouse using Salesforce DX</h3>
+
+<p>This is the recommended installation option for developers who want to experience the app and the code.</p>
+
+<ol>
+    <li>
+        <p>Install Salesforce DX. Enable the Dev Hub in your org or sign up for a Dev Hub trial org and install the
+            Salesforce DX CLI. Follow the instructions in the <a
+                href="https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm?search_text=trial%20hub%20org">Salesforce
+                DX Setup Guide</a> or in the <a href="https://trailhead.salesforce.com/modules/sfdx_app_dev">App
+                Development with Salesforce DX</a> Trailhead module.</p>
+    </li>
+
+    <li>
+        <p>Clone the <strong>dreamhouse-sfdx</strong> repository:</p>
+
+        <pre class="codeExample"><code>git clone https://github.com/dreamhouseapp/dreamhouse-sfdx
+cd dreamhouse-sfdx
+</code></pre>
+    </li>
+
+    <li>
+        <p>Create a scratch org and provide it with an alias of your choice (<strong>dh</strong> in the command below):
+        </p>
+
+        <pre class="codeExample"><code>sfdx force:org:create -s -f config/project-scratch-def.json -a dh
+</code></pre>
+    </li>
+
+    <li>
+        <p>Push the app to your scratch org:</p>
+
+        <pre class="codeExample"><code>sfdx force:source:push
+</code></pre>
+    </li>
+
+    <li>
+        <p>Assign the <strong>dreamhouse</strong> permission set to the default user:</p>
+
+        <pre class="codeExample"><code>sfdx force:user:permset:assign -n dreamhouse
+</code></pre>
+    </li>
+
+    <li>
+        <p>Open the scratch org:</p>
+
+        <pre class="codeExample"><code>sfdx force:org:open
+</code></pre>
+    </li>
+
+    <li>
+        <p>Select <strong>DreamHouse</strong> in the App Launcher</p>
+    </li>
+
+    <li>
+        <p>Click the <strong>Data Import</strong> tab and click <strong>Initialize Sample Data</strong></p>
+    </li>
+</ol>
+
+<h3 id="installingdreamhouseusinganunlockedpackage">Installing DreamHouse using an unlocked package</h3>
+
+<p>This is the recommended option for non developers. Use this option if you want to experience the sample app but do
+    not plan to modify the code.</p>
+
+<ol>
+    <li>
+        <p><a href="https://developer.salesforce.com/signup">Sign up</a> for a developer edition.</p>
+    </li>
+
+    <li>
+        <p>Enable My Domain. Follow the instructions to enable My Domain <a
+                href="https://trailhead.salesforce.com/modules/identity_login/units/identity_login_my_domain">here</a>.
+        </p>
+    </li>
+
+    <li>
+        <p>Click this link to install the DreamHouse unlocked package into your developer edition org.</p>
+    </li>
+
+    <li>
+        <p>Select <strong>Install for All Users</strong>. When prompted, make sure you grant access to the external
+            sites (api.lifx.com, dreamhouzz-push-server.herokuapp.com, and hooks.slack.com).</p>
+    </li>
+
+    <li>
+        <p>Select <strong>DreamHouse</strong> in the App Launcher.</p>
+    </li>
+
+    <li>
+        <p>Click the <strong>Data Import</strong> tab and click <strong>Initialize Sample Data</strong>.</p>
+    </li>
+</ol>
+
+<h2 id="codehighlights">Code highlights</h2>
+
+<h3 id="lightningcomponents">Lightning components</h3>
+
+<p>DreamHouse features a large number of Lightning Components to enhance the user experience. Lightning Components are
+    used on the Property record page, on an app pages (<strong>Property Finder</strong> and <strong>Property
+        Explorer</strong>), in the utility bar, and as quick actions.</p>
+
+<p>Installing a Lightning component as a <strong>quick action</strong> can be a great alternative to adding the
+    component directly to the page layout because the component instantiation is deferred until the action button is
+    clicked (lazy instantiation). Installing less frequently used components as quick or global actions can contribute
+    to a faster page loading time, and a streamlined user interface. In DreamHouse, the SmartHome component is installed as a quick action on the
+    Property record page.</p>
+
+<p>The <strong>utility bar</strong> is a great place to host components you always want at your fingertips. MortgageCalculator is a great example.</p>
+
+<h3 id="baselightningcomponents">Base Lightning components</h3>
+
+<p>Base Lightning Components are a set of powerful UI components available in the Lightning Component Framework. The
+    DreamHouse custom components use many Base Lightning Components as building blocks. For example,
+    <strong>lightning:card</strong>, <strong>lightning:button</strong>, and <strong>lightning:layout</strong> are used
+    throughout the application. PropertyCarousel, which allows you
+    to navigate through the pictures of a property and upload new pictures, is built using
+    <strong>lightning:carousel</strong> and <strong>lightning:fileUpload</strong>. PropertySummary leverages
+    <strong>lightning:formattedAddress</strong> and <strong>lightning:formattedNumber</strong>.</p>
+
+<h3 id="lightningdataservice">Lightning Data Service</h3>
+
+<p>Lightning Data Service allows you to manipulate (retrieve, create, update, delete) Salesforce records without writing
+    server-side code (Apex). In DreamHouse, all the Lightning components that work with a single Property record use
+    Lightning Data Service. Check out PropertySummary for an
+    example.</p>
+
+<h3 id="thirdpartyjavascriptlibraries">Third-Party JavaScript libraries</h3>
+
+<p>You can use third-party JavaScript libraries in Lightning Components using <strong>ltng:require</strong>. For
+    example:</p>
+
+<ul>
+    <li>Map and PropertyListMap use the Leaflet library.</li>
+
+    <li>PriceRange uses the <a
+            href="https://refreshless.com/nouislider/">nouislider</a> library for its double slider.</li>
+</ul>
+
+<h3 id="standardapplicationevents">Standard application events</h3>
+
+<p>Standard application events are available by default in the framework and are used to trigger high level actions. For
+    example, in PropertySummary,
+    <strong>force:navigateToSObject</strong> is used to navigate to the broker record page, and
+    <strong>force:editRecord</strong> is used to edit a record in place.</p>
+
+<h3 id="customapplicationevents">Custom application events</h3>
+
+<p>Custom application events are used for communication between components in App Builder. For example, the PropertyFilterChange event is fired in the PropertyFilter component to notify other components that
+    new filtering criteria have been selected.</p>
+
+<h3 id="componentevents">Component events</h3>
+
+<p>Component events are used for finer-grained communication between components. For example, the PropertyPaginator component fires the
+    <strong>pageNext</strong> and <strong>pagePrevious</strong> events to notify its parent (PropetyTileList) that the user requested the next or
+    previous page.</p>
+
+<h3 id="custompagetemplates">Custom page templates</h3>
+
+<p>Custom page templates allow you to create ad hoc page layouts that admins can use in App Builder to create new pages.
+    Custom page templates are implemented as Lightning Components. There are two custom page templates in Dreamhouse: PageTemplate264
+    (used by the <strong>Property Finder</strong> page) and PageTemplate273
+    (used by the <strong>Property Explorer</strong> page). They provide custom three column layouts using different
+    relative widths for each column.</p>
+
+<h3 id="reportsanddashboards">Reports and dashboards</h3>
+
+<p>Reports and dashboards are easy to create and look great in Lightning. Just to get things started, the DreamHouse app
+    includes a few reports in the <strong>DreamHouse Reports</strong> folder (<strong>Days on Market</strong>,
+    <strong>Properties by Broker</strong>, and <strong>Portfolio Health</strong>), and a dashboard in the
+    <strong>DreamHouse Dashboard</strong> folder (<strong>My Dashboard</strong>).</p>
+
+<h3 id="einsteinvision">Einstein Vision</h3>
+
+<p>The VisualSearchBox component leverages Einstein Vision to
+    provide a visual search feature that allows you to find houses based on the picture of a house you like. Just select
+    or drag a picture in the Visual search area of the property filters: Einstein Vision will recognize the type of
+    house (colonial, victorian, or contemporary) and you will be presented with a list of houses matching that category.
+    Follow the instructions below to enable visual search in the <strong>Property Finder</strong> and <strong>Property
+        Explorer</strong> pages:</p>
+
+<ol>
+    <li>
+        <p>Get an <strong>Einstein Platform Services</strong> account. Follow the instructions <a
+                href="https://trailhead.salesforce.com/projects/predictive_vision_apex/steps/predictive_vision_apex_prep">here</a>.
+        </p>
+    </li>
+
+    <li>
+        <p>In Salesforce, click the <strong>Files</strong> tab and upload <strong>einstein_platform.pem</strong>.</p>
+    </li>
+
+    <li>
+        <p>In <strong>Setup</strong>, type <strong>Custom</strong> in the Quick Find box and click the <strong>Custom
+                Settings</strong> link.</p>
+    </li>
+
+    <li>
+        <p>Click the first <strong>New</strong> Button (at the top of the screen).</p>
+    </li>
+
+    <li>
+        <p>For <strong>Einstein Vision Email</strong>, specify the email address you used when you created your Einstein
+            Platform Services account (step 1), and click <strong>Save</strong>.</p>
+    </li>
+
+    <li>
+        <p>In the DreamHouse app, click the <strong>Einstein Vision</strong> tab.</p>
+    </li>
+
+    <li>
+        <p>Click the <strong>Create Dataset</strong> button.</p>
+    </li>
+
+    <li>
+        <p>In the <strong>houses</strong> tile, click the <strong>Train</strong> button, the click the
+            <strong>Models</strong> tab.</p>
+    </li>
+
+    <li>
+        <p>Click the <strong>Refresh Models</strong> button until the Progress column indicates <strong>100%</strong>.
+        </p>
+    </li>
+
+    <li>
+        <p>Copy the <strong>Model Id</strong> in your clipboard.</p>
+    </li>
+
+    <li>
+        <p>Click the <strong>Property Finder</strong> Tab, click the gear icon (upper right corner), and click
+            <strong>Edit Page</strong>. Click the <strong>Filters</strong> component and paste the Model Id in the
+            <strong>Einstein Model Id</strong> field in the right sidebar. Save the page.</p>
+    </li>
+
+    <li>
+        <p>Repeat the last step for the <strong>Property Explorer</strong> page.</p>
+    </li>
+</ol>
+
+<p>You can now search houses by uploading (or dropping) a picture in the visual search box that is part of the Filters
+    component on the <strong>Property Finder</strong> and <strong>Property Explorer</strong> pages.</p>
+
+<h2 id="additionalresources">Additional resources</h2>
+
+<p>DreamHouse has many more features not discussed here. For example, DreamHouse also demonstrates how to:</p>
+
+<ul>
+    <li>Use the Salesforce Mobile App</li>
+
+    <li>Create a customer engagement mobile app with the Mobile SDK</li>
+
+    <li>Automate processes with Process Builder, including sending push notification messages to the customer engagement
+        app</li>
+
+    <li>Integrate with Alexa, Slack, and Facebook Messenger</li>
+
+    <li>Integrate with IoT devices like smart lights, smart thermostats, and smart locks</li>
+</ul>
+
+<p>Head over to <a href="http://dreamhouseapp.io">dreamhouseapp.io</a> to learn more.</p>

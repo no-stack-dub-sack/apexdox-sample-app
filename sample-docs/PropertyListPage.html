@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>ApexDox Sample Project</title>
+    <meta charset="UTF-8">
+    <script type="module" src="./assets/index.js"></script>
+    <script type="module" src="./assets/search-idx.js"></script>
+    <script type="module" src="./assets/search.js"></script>
+    <script charset="UTF-8" src="./assets/highlight.js"></script>
+    <script charset="UTF-8" src="./assets/mark.js"></script>
+    <script charset="UTF-8" src="./assets/lunr.js"></script>
+    <link rel="stylesheet" href="./assets/highlight.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/index.css" />
+    <link rel="shortcut icon" type="image/png" href="./assets/favicon.png" />
+  </head>
+
+  <body>
+    <div id="side-bar">
+
+      <div id="logo-container">
+        <div class="title">
+          ApexDox Sample Project
+        </div>
+        <img src="assets/logo.png" />
+        <div class="subtitle">
+          Replace this logo, title and subtitle using custom settings.
+        </div>
+      </div>
+      <div id="search-wrapper">
+        <div class="search-icon"></div>
+        <input id="search-input" type="text" autocomplete="off" placeholder="Search...">
+      </div>
+      <ul id="search-results" class=""></ul>
+      <div class="navbar">
+        <nav role="navigation">
+          <a class="nav-header" id="home" href="javascript:void(0)" onclick="goToLocation('index.html');">
+            Home
+          </a>
+          <details id="Dreamhouse_Analytics" class="group-name">
+            <summary id="header-Dreamhouse_Analytics" class="nav-header">
+              <span>Dreamhouse Analytics</span>
+            </summary>
+            <ul>
+              <!-- menu items -->
+              <li title="EinsteinVisionController" id="item-EinsteinVisionController" class="nav-item class global" onclick="goToLocation('EinsteinVisionController.html');">
+                <a tabindex="1" href="javascript:void(0)">EinsteinVisionController</a>
+              </li>
+            </ul>
+          </details>
+          <details id="Dreamhouse_Bot" class="group-name">
+            <summary id="header-Dreamhouse_Bot" class="nav-header">
+              <a href="javascript:void(0)" title="See Class Group info" onclick="goToLocation('Bot.html');">Dreamhouse Bot</a>
+            </summary>
+            <ul>
+              <!-- menu items -->
+              <li title="BotController" id="item-BotController" class="nav-item class public" onclick="goToLocation('BotController.html');">
+                <a tabindex="1" href="javascript:void(0)">BotController</a>
+              </li>
+              <li title="BotField" id="item-BotField" class="nav-item class public" onclick="goToLocation('BotField.html');">
+                <a tabindex="1" href="javascript:void(0)">BotField</a>
+              </li>
+              <li title="BotHandler" id="item-BotHandler" class="nav-item class public" onclick="goToLocation('BotHandler.html');">
+                <a tabindex="1" href="javascript:void(0)">BotHandler</a>
+              </li>
+              <li title="BotItem" id="item-BotItem" class="nav-item class public" onclick="goToLocation('BotItem.html');">
+                <a tabindex="1" href="javascript:void(0)">BotItem</a>
+              </li>
+              <li title="BotMessage" id="item-BotMessage" class="nav-item class public" onclick="goToLocation('BotMessage.html');">
+                <a tabindex="1" href="javascript:void(0)">BotMessage</a>
+              </li>
+              <li title="BotMessageButton" id="item-BotMessageButton" class="nav-item class public" onclick="goToLocation('BotMessageButton.html');">
+                <a tabindex="1" href="javascript:void(0)">BotMessageButton</a>
+              </li>
+              <li title="BotRecord" id="item-BotRecord" class="nav-item class public" onclick="goToLocation('BotRecord.html');">
+                <a tabindex="1" href="javascript:void(0)">BotRecord</a>
+              </li>
+              <li title="BotResponse" id="item-BotResponse" class="nav-item class public" onclick="goToLocation('BotResponse.html');">
+                <a tabindex="1" href="javascript:void(0)">BotResponse</a>
+              </li>
+            </ul>
+          </details>
+          <details id="Dreamhouse_Bot_Handlers" class="group-name">
+            <summary id="header-Dreamhouse_Bot_Handlers" class="nav-header">
+              <span>Dreamhouse Bot Handlers</span>
+            </summary>
+            <ul>
+              <!-- menu items -->
+              <li title="HandlerAddTwoNumbers" id="item-HandlerAddTwoNumbers" class="nav-item class public" onclick="goToLocation('HandlerAddTwoNumbers.html');">
+                <a tabindex="1" href="javascript:void(0)">HandlerAddTwoNumbers</a>
+              </li>
+              <li title="HandlerCostCenter" id="item-HandlerCostCenter" class="nav-item class public" onclick="goToLocation('HandlerCostCenter.html');">
+                <a tabindex="1" href="javascript:void(0)">HandlerCostCenter</a>
+              </li>
+              <li title="HandlerDashboard" id="item-HandlerDashboard" class="nav-item class public" onclick="goToLocation('HandlerDashboard.html');">
+                <a tabindex="1" href="javascript:void(0)">HandlerDashboard</a>
+              </li>
+              <li title="HandlerEmployeeId" id="item-HandlerEmployeeId" class="nav-item class public" onclick="goToLocation('HandlerEmployeeId.html');">
+                <a tabindex="1" href="javascript:void(0)">HandlerEmployeeId</a>
+              </li>
+              <li title="HandlerFileUpload" id="item-HandlerFileUpload" class="nav-item class public" onclick="goToLocation('HandlerFileUpload.html');">
+                <a tabindex="1" href="javascript:void(0)">HandlerFileUpload</a>
+              </li>
+              <li title="HandlerFindAccount" id="item-HandlerFindAccount" class="nav-item class public" onclick="goToLocation('HandlerFindAccount.html');">
+                <a tabindex="1" href="javascript:void(0)">HandlerFindAccount</a>
+              </li>
+              <li title="HandlerFindContact" id="item-HandlerFindContact" class="nav-item class public" onclick="goToLocation('HandlerFindContact.html');">
+                <a tabindex="1" href="javascript:void(0)">HandlerFindContact</a>
+              </li>
+              <li title="HandlerFindProperties" id="item-HandlerFindProperties" class="nav-item class public" onclick="goToLocation('HandlerFindProperties.html');">
+                <a tabindex="1" href="javascript:void(0)">HandlerFindProperties</a>
+              </li>
+              <li title="HandlerFindPropertiesByBedrooms" id="item-HandlerFindPropertiesByBedrooms" class="nav-item class public" onclick="goToLocation('HandlerFindPropertiesByBedrooms.html');">
+                <a tabindex="1" href="javascript:void(0)">HandlerFindPropertiesByBedrooms</a>
+              </li>
+              <li title="HandlerHello" id="item-HandlerHello" class="nav-item class public" onclick="goToLocation('HandlerHello.html');">
+                <a tabindex="1" href="javascript:void(0)">HandlerHello</a>
+              </li>
+              <li title="HandlerHelp" id="item-HandlerHelp" class="nav-item class public" onclick="goToLocation('HandlerHelp.html');">
+                <a tabindex="1" href="javascript:void(0)">HandlerHelp</a>
+              </li>
+              <li title="HandlerHelpTopic" id="item-HandlerHelpTopic" class="nav-item class public" onclick="goToLocation('HandlerHelpTopic.html');">
+                <a tabindex="1" href="javascript:void(0)">HandlerHelpTopic</a>
+              </li>
+              <li title="HandlerImageBasedSearch" id="item-HandlerImageBasedSearch" class="nav-item class public" onclick="goToLocation('HandlerImageBasedSearch.html');">
+                <a tabindex="1" href="javascript:void(0)">HandlerImageBasedSearch</a>
+              </li>
+              <li title="HandlerMyOpenCases" id="item-HandlerMyOpenCases" class="nav-item class public" onclick="goToLocation('HandlerMyOpenCases.html');">
+                <a tabindex="1" href="javascript:void(0)">HandlerMyOpenCases</a>
+              </li>
+              <li title="HandlerNext" id="item-HandlerNext" class="nav-item class public" onclick="goToLocation('HandlerNext.html');">
+                <a tabindex="1" href="javascript:void(0)">HandlerNext</a>
+              </li>
+              <li title="HandlerPipeline" id="item-HandlerPipeline" class="nav-item class public" onclick="goToLocation('HandlerPipeline.html');">
+                <a tabindex="1" href="javascript:void(0)">HandlerPipeline</a>
+              </li>
+              <li title="HandlerQuarter" id="item-HandlerQuarter" class="nav-item class public" onclick="goToLocation('HandlerQuarter.html');">
+                <a tabindex="1" href="javascript:void(0)">HandlerQuarter</a>
+              </li>
+              <li title="HandlerReport" id="item-HandlerReport" class="nav-item class public" onclick="goToLocation('HandlerReport.html');">
+                <a tabindex="1" href="javascript:void(0)">HandlerReport</a>
+              </li>
+              <li title="HandlerSOQL" id="item-HandlerSOQL" class="nav-item class public" onclick="goToLocation('HandlerSOQL.html');">
+                <a tabindex="1" href="javascript:void(0)">HandlerSOQL</a>
+              </li>
+              <li title="HandlerTopOpportunities" id="item-HandlerTopOpportunities" class="nav-item class public" onclick="goToLocation('HandlerTopOpportunities.html');">
+                <a tabindex="1" href="javascript:void(0)">HandlerTopOpportunities</a>
+              </li>
+              <li title="HandlerTravelApproval" id="item-HandlerTravelApproval" class="nav-item class public" onclick="goToLocation('HandlerTravelApproval.html');">
+                <a tabindex="1" href="javascript:void(0)">HandlerTravelApproval</a>
+              </li>
+            </ul>
+          </details>
+          <details id="Dreamhouse_Slack_Bot" class="group-name">
+            <summary id="header-Dreamhouse_Slack_Bot" class="nav-header">
+              <span>Dreamhouse Slack Bot</span>
+            </summary>
+            <ul>
+              <!-- menu items -->
+              <li title="PostPriceChangeToSlack" id="item-PostPriceChangeToSlack" class="nav-item class public" onclick="goToLocation('PostPriceChangeToSlack.html');">
+                <a tabindex="1" href="javascript:void(0)">PostPriceChangeToSlack</a>
+              </li>
+              <li title="PushPriceChangeNotification" id="item-PushPriceChangeNotification" class="nav-item class public" onclick="goToLocation('PushPriceChangeNotification.html');">
+                <a tabindex="1" href="javascript:void(0)">PushPriceChangeNotification</a>
+              </li>
+              <li title="SlackOpportunityPublisher" id="item-SlackOpportunityPublisher" class="nav-item class public" onclick="goToLocation('SlackOpportunityPublisher.html');">
+                <a tabindex="1" href="javascript:void(0)">SlackOpportunityPublisher</a>
+              </li>
+            </ul>
+          </details>
+          <details id="Dreamhouse_Utils" class="group-name">
+            <summary id="header-Dreamhouse_Utils" class="nav-header">
+              <span>Dreamhouse Utils</span>
+            </summary>
+            <ul>
+              <!-- menu items -->
+              <li title="HttpFormBuilder" id="item-HttpFormBuilder" class="nav-item class public" onclick="goToLocation('HttpFormBuilder.html');">
+                <a tabindex="1" href="javascript:void(0)">HttpFormBuilder</a>
+              </li>
+              <li title="JWT" id="item-JWT" class="nav-item class public" onclick="goToLocation('JWT.html');">
+                <a tabindex="1" href="javascript:void(0)">JWT</a>
+              </li>
+              <li title="JWTBearerFlow" id="item-JWTBearerFlow" class="nav-item class public" onclick="goToLocation('JWTBearerFlow.html');">
+                <a tabindex="1" href="javascript:void(0)">JWTBearerFlow</a>
+              </li>
+            </ul>
+          </details>
+          <details id="Global_Utils" class="group-name">
+            <summary id="header-Global_Utils" class="nav-header">
+              <span>Global Utils</span>
+            </summary>
+            <ul>
+              <!-- menu items -->
+              <li title="ApexDox" id="item-ApexDox" class="nav-item class public" onclick="goToLocation('ApexDox.html');">
+                <a tabindex="1" href="javascript:void(0)">ApexDox</a>
+              </li>
+              <li title="ArrayUtils" id="item-ArrayUtils" class="nav-item class global" onclick="goToLocation('ArrayUtils.html');">
+                <a tabindex="1" href="javascript:void(0)">ArrayUtils</a>
+              </li>
+              <li title="IllegalStateException" id="item-IllegalStateException" class="nav-item class global" onclick="goToLocation('IllegalStateException.html');">
+                <a tabindex="1" href="javascript:void(0)">IllegalStateException</a>
+              </li>
+              <li title="IObjectComparator" id="item-IObjectComparator" class="nav-item class global" onclick="goToLocation('IObjectComparator.html');">
+                <a tabindex="1" href="javascript:void(0)">IObjectComparator</a>
+              </li>
+              <li title="ISObjectComparator" id="item-ISObjectComparator" class="nav-item class global" onclick="goToLocation('ISObjectComparator.html');">
+                <a tabindex="1" href="javascript:void(0)">ISObjectComparator</a>
+              </li>
+              <li title="MyRestResource" id="item-MyRestResource" class="nav-item class global" onclick="goToLocation('MyRestResource.html');">
+                <a tabindex="1" href="javascript:void(0)">MyRestResource</a>
+              </li>
+              <li title="MyWebService" id="item-MyWebService" class="nav-item class global" onclick="goToLocation('MyWebService.html');">
+                <a tabindex="1" href="javascript:void(0)">MyWebService</a>
+              </li>
+              <li title="PrimitiveComparator" id="item-PrimitiveComparator" class="nav-item class global" onclick="goToLocation('PrimitiveComparator.html');">
+                <a tabindex="1" href="javascript:void(0)">PrimitiveComparator</a>
+              </li>
+              <li title="Status" id="item-Status" class="nav-item class public" onclick="goToLocation('Status.html');">
+                <a tabindex="1" href="javascript:void(0)">Status</a>
+              </li>
+              <li title="StopWatch" id="item-StopWatch" class="nav-item class global" onclick="goToLocation('StopWatch.html');">
+                <a tabindex="1" href="javascript:void(0)">StopWatch</a>
+              </li>
+            </ul>
+          </details>
+          <details id="Miscellaneous" class="group-name">
+            <summary id="header-Miscellaneous" class="nav-header">
+              <span>Miscellaneous</span>
+            </summary>
+            <ul>
+              <!-- menu items -->
+              <li title="LIFXController" id="item-LIFXController" class="nav-item class public" onclick="goToLocation('LIFXController.html');">
+                <a tabindex="1" href="javascript:void(0)">LIFXController</a>
+              </li>
+              <li title="PropertyController" id="item-PropertyController" class="nav-item class global" onclick="goToLocation('PropertyController.html');">
+                <a tabindex="1" href="javascript:void(0)">PropertyController</a>
+              </li>
+              <li title="PropertyListPage" id="item-PropertyListPage" class="nav-item class public" onclick="goToLocation('PropertyListPage.html');">
+                <a tabindex="1" href="javascript:void(0)">PropertyListPage</a>
+              </li>
+              <li title="SampleDataController" id="item-SampleDataController" class="nav-item class public" onclick="goToLocation('SampleDataController.html');">
+                <a tabindex="1" href="javascript:void(0)">SampleDataController</a>
+              </li>
+            </ul>
+          </details>
+        </nav>
+      </div>
+    </div>
+    <table id="content">
+      <tr>
+        <td class="scoping-panel">
+          Show: <input type="checkbox" checked="true" id="cbx-all" onclick="toggleAllScopes(this.checked);" />
+          <label for="cbx-all">All</label>&nbsp;&nbsp;
+          <input type="checkbox" checked="true" id="cbx-global" onclick="toggleScope('global', this.checked);" />
+          <label for="cbx-global">
+            global
+          </label>&nbsp;&nbsp;<input type="checkbox" checked="true" id="cbx-public" onclick="toggleScope('public', this.checked);" />
+          <label for="cbx-public">
+            public
+          </label>&nbsp;&nbsp;<input type="checkbox" checked="true" id="cbx-protected" onclick="toggleScope('protected', this.checked);" />
+          <label for="cbx-protected">
+            protected
+          </label>&nbsp;&nbsp;<input type="checkbox" checked="true" id="cbx-private" onclick="toggleScope('private', this.checked);" />
+          <label for="cbx-private">
+            private
+          </label>&nbsp;&nbsp;<input type="checkbox" checked="true" id="cbx-webservice" onclick="toggleScope('webservice', this.checked);" />
+          <label for="cbx-webservice">
+            webService
+          </label>&nbsp;&nbsp;<input type="checkbox" checked="true" id="cbx-testmethod" onclick="toggleScope('testmethod', this.checked);" />
+          <label for="cbx-testmethod">
+            testMethod
+          </label>
+        </td>
+      </tr>
+      <tr>
+        <td class="doc-page">
+
+          <div class="section">
+
+            <h2 class="class-title top-level-type" id="PropertyListPage">
+
+              <a target="_blank" rel="noopener noreferrer" title="Go to source" class="source-link" href="https://github.com/no-stack-dub-sack/apexdox-sample-app/tree/master/force-app/main/default/classes/PropertyListPage.cls#L11">
+                PropertyListPage
+              </a>
+            </h2>
+            <div class="class-container">
+
+              <div class="class-description">
+                The <code class="code-inline">PropertyListPage</code> class. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad veniam, quis nostrud exercitation ullamco laboris nis.
+              </div>
+              <div class="class-subtitle">
+                Signature
+              </div>
+
+              <div class="class-signature">
+                public class PropertyListPage
+              </div>
+              <div class="class-subtitle">
+                See
+              </div>
+              <div class="class-subtitle-description">
+                <a target="_blank" rel="noopener noreferrer" href="https://github.com/dreamhouseapp/dreamhouse-sfdx/blob/master/LICENSE">License</a>, <a target="_blank" rel="noopener noreferrer" href="https://github.com/dreamhouseapp/dreamhouse-sfdx">Github</a>
+              </div><br />Salesforce.com<br />Jul 2017
+            </div>
+            <div class="subsection properties PropertyListPage">
+              <h3 class="subsection-title properties">PropertyListPage Properties</h2>
+                <table class="attributes-table properties">
+
+                  <tr>
+                    <th>Name</th>
+                    <th>Signature</th>
+                    <th>Annotations</th>
+                    <th>Description</th>
+                  </tr>
+                  <tr class="property public">
+                    <td class="attribute-name">
+                      <a target="_blank" rel="noopener noreferrer" title="Go to source" class="source-link" href="https://github.com/no-stack-dub-sack/apexdox-sample-app/tree/master/force-app/main/default/classes/PropertyListPage.cls#L18">
+                        pageNumber
+                      </a></td>
+                    <td>
+                      <div class="attribute-signature">
+                        public Integer pageNumber
+                      </div>
+                    </td>
+                    <td>
+                      <div class="prop-annotations">@AuraEnabled</div>
+                    </td>
+
+                    <td class="attribute-description">
+
+                    </td>
+                  </tr>
+                  <tr class="property public">
+                    <td class="attribute-name">
+                      <a target="_blank" rel="noopener noreferrer" title="Go to source" class="source-link" href="https://github.com/no-stack-dub-sack/apexdox-sample-app/tree/master/force-app/main/default/classes/PropertyListPage.cls#L15">
+                        pageSize
+                      </a></td>
+                    <td>
+                      <div class="attribute-signature">
+                        public Integer pageSize
+                      </div>
+                    </td>
+                    <td>
+                      <div class="prop-annotations">@AuraEnabled</div>
+                    </td>
+
+                    <td class="attribute-description">
+                      The description column will show up any time there&#39;s a description on a property.
+                    </td>
+                  </tr>
+                  <tr class="property public">
+                    <td class="attribute-name">
+                      <a target="_blank" rel="noopener noreferrer" title="Go to source" class="source-link" href="https://github.com/no-stack-dub-sack/apexdox-sample-app/tree/master/force-app/main/default/classes/PropertyListPage.cls#L24">
+                        properties
+                      </a></td>
+                    <td>
+                      <div class="attribute-signature">
+                        public List&lt;Property__c&gt; properties
+                      </div>
+                    </td>
+                    <td>
+                      <div class="prop-annotations">@AuraEnabled</div>
+                    </td>
+
+                    <td class="attribute-description">
+
+                    </td>
+                  </tr>
+                  <tr class="property public">
+                    <td class="attribute-name">
+                      <a target="_blank" rel="noopener noreferrer" title="Go to source" class="source-link" href="https://github.com/no-stack-dub-sack/apexdox-sample-app/tree/master/force-app/main/default/classes/PropertyListPage.cls#L21">
+                        total
+                      </a></td>
+                    <td>
+                      <div class="attribute-signature">
+                        public Integer total
+                      </div>
+                    </td>
+                    <td>
+                      <div class="prop-annotations">@AuraEnabled</div>
+                    </td>
+
+                    <td class="attribute-description">
+
+                    </td>
+                  </tr>
+                </table>
+            </div>
+          </div>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="footer">
+
+          <div>
+            <a href="https://github.com/no-stack-dub-sack/apexdox-vscode" target="_blank" rel="noopener noreferrer">
+              Powered By ApexDox VS Code
+            </a>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </body>
+
+</html>

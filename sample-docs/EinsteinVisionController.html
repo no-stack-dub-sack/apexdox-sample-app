@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>ApexDox Sample Project</title>
+    <meta charset="UTF-8">
+    <script type="module" src="./assets/index.js"></script>
+    <script type="module" src="./assets/search-idx.js"></script>
+    <script type="module" src="./assets/search.js"></script>
+    <script charset="UTF-8" src="./assets/highlight.js"></script>
+    <script charset="UTF-8" src="./assets/mark.js"></script>
+    <script charset="UTF-8" src="./assets/lunr.js"></script>
+    <link rel="stylesheet" href="./assets/highlight.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/index.css" />
+    <link rel="shortcut icon" type="image/png" href="./assets/favicon.png" />
+  </head>
+
+  <body>
+    <div id="side-bar">
+
+      <div id="logo-container">
+        <div class="title">
+          ApexDox Sample Project
+        </div>
+        <img src="assets/logo.png" />
+        <div class="subtitle">
+          Replace this logo, title and subtitle using custom settings.
+        </div>
+      </div>
+      <div id="search-wrapper">
+        <div class="search-icon"></div>
+        <input id="search-input" type="text" autocomplete="off" placeholder="Search...">
+      </div>
+      <ul id="search-results" class=""></ul>
+      <div class="navbar">
+        <nav role="navigation">
+          <a class="nav-header" id="home" href="javascript:void(0)" onclick="goToLocation('index.html');">
+            Home
+          </a>
+          <details id="Dreamhouse_Analytics" class="group-name">
+            <summary id="header-Dreamhouse_Analytics" class="nav-header">
+              <span>Dreamhouse Analytics</span>
+            </summary>
+            <ul>
+              <!-- menu items -->
+              <li title="EinsteinVisionController" id="item-EinsteinVisionController" class="nav-item class global" onclick="goToLocation('EinsteinVisionController.html');">
+                <a tabindex="1" href="javascript:void(0)">EinsteinVisionController</a>
+              </li>
+            </ul>
+          </details>
+          <details id="Dreamhouse_Bot" class="group-name">
+            <summary id="header-Dreamhouse_Bot" class="nav-header">
+              <a href="javascript:void(0)" title="See Class Group info" onclick="goToLocation('Bot.html');">Dreamhouse Bot</a>
+            </summary>
+            <ul>
+              <!-- menu items -->
+              <li title="BotController" id="item-BotController" class="nav-item class public" onclick="goToLocation('BotController.html');">
+                <a tabindex="1" href="javascript:void(0)">BotController</a>
+              </li>
+              <li title="BotField" id="item-BotField" class="nav-item class public" onclick="goToLocation('BotField.html');">
+                <a tabindex="1" href="javascript:void(0)">BotField</a>
+              </li>
+              <li title="BotHandler" id="item-BotHandler" class="nav-item class public" onclick="goToLocation('BotHandler.html');">
+                <a tabindex="1" href="javascript:void(0)">BotHandler</a>
+              </li>
+              <li title="BotItem" id="item-BotItem" class="nav-item class public" onclick="goToLocation('BotItem.html');">
+                <a tabindex="1" href="javascript:void(0)">BotItem</a>
+              </li>
+              <li title="BotMessage" id="item-BotMessage" class="nav-item class public" onclick="goToLocation('BotMessage.html');">
+                <a tabindex="1" href="javascript:void(0)">BotMessage</a>
+              </li>
+              <li title="BotMessageButton" id="item-BotMessageButton" class="nav-item class public" onclick="goToLocation('BotMessageButton.html');">
+                <a tabindex="1" href="javascript:void(0)">BotMessageButton</a>
+              </li>
+              <li title="BotRecord" id="item-BotRecord" class="nav-item class public" onclick="goToLocation('BotRecord.html');">
+                <a tabindex="1" href="javascript:void(0)">BotRecord</a>
+              </li>
+              <li title="BotResponse" id="item-BotResponse" class="nav-item class public" onclick="goToLocation('BotResponse.html');">
+                <a tabindex="1" href="javascript:void(0)">BotResponse</a>
+              </li>
+            </ul>
+          </details>
+          <details id="Dreamhouse_Bot_Handlers" class="group-name">
+            <summary id="header-Dreamhouse_Bot_Handlers" class="nav-header">
+              <span>Dreamhouse Bot Handlers</span>
+            </summary>
+            <ul>
+              <!-- menu items -->
+              <li title="HandlerAddTwoNumbers" id="item-HandlerAddTwoNumbers" class="nav-item class public" onclick="goToLocation('HandlerAddTwoNumbers.html');">
+                <a tabindex="1" href="javascript:void(0)">HandlerAddTwoNumbers</a>
+              </li>
+              <li title="HandlerCostCenter" id="item-HandlerCostCenter" class="nav-item class public" onclick="goToLocation('HandlerCostCenter.html');">
+                <a tabindex="1" href="javascript:void(0)">HandlerCostCenter</a>
+              </li>
+              <li title="HandlerDashboard" id="item-HandlerDashboard" class="nav-item class public" onclick="goToLocation('HandlerDashboard.html');">
+                <a tabindex="1" href="javascript:void(0)">HandlerDashboard</a>
+              </li>
+              <li title="HandlerEmployeeId" id="item-HandlerEmployeeId" class="nav-item class public" onclick="goToLocation('HandlerEmployeeId.html');">
+                <a tabindex="1" href="javascript:void(0)">HandlerEmployeeId</a>
+              </li>
+              <li title="HandlerFileUpload" id="item-HandlerFileUpload" class="nav-item class public" onclick="goToLocation('HandlerFileUpload.html');">
+                <a tabindex="1" href="javascript:void(0)">HandlerFileUpload</a>
+              </li>
+              <li title="HandlerFindAccount" id="item-HandlerFindAccount" class="nav-item class public" onclick="goToLocation('HandlerFindAccount.html');">
+                <a tabindex="1" href="javascript:void(0)">HandlerFindAccount</a>
+              </li>
+              <li title="HandlerFindContact" id="item-HandlerFindContact" class="nav-item class public" onclick="goToLocation('HandlerFindContact.html');">
+                <a tabindex="1" href="javascript:void(0)">HandlerFindContact</a>
+              </li>
+              <li title="HandlerFindProperties" id="item-HandlerFindProperties" class="nav-item class public" onclick="goToLocation('HandlerFindProperties.html');">
+                <a tabindex="1" href="javascript:void(0)">HandlerFindProperties</a>
+              </li>
+              <li title="HandlerFindPropertiesByBedrooms" id="item-HandlerFindPropertiesByBedrooms" class="nav-item class public" onclick="goToLocation('HandlerFindPropertiesByBedrooms.html');">
+                <a tabindex="1" href="javascript:void(0)">HandlerFindPropertiesByBedrooms</a>
+              </li>
+              <li title="HandlerHello" id="item-HandlerHello" class="nav-item class public" onclick="goToLocation('HandlerHello.html');">
+                <a tabindex="1" href="javascript:void(0)">HandlerHello</a>
+              </li>
+              <li title="HandlerHelp" id="item-HandlerHelp" class="nav-item class public" onclick="goToLocation('HandlerHelp.html');">
+                <a tabindex="1" href="javascript:void(0)">HandlerHelp</a>
+              </li>
+              <li title="HandlerHelpTopic" id="item-HandlerHelpTopic" class="nav-item class public" onclick="goToLocation('HandlerHelpTopic.html');">
+                <a tabindex="1" href="javascript:void(0)">HandlerHelpTopic</a>
+              </li>
+              <li title="HandlerImageBasedSearch" id="item-HandlerImageBasedSearch" class="nav-item class public" onclick="goToLocation('HandlerImageBasedSearch.html');">
+                <a tabindex="1" href="javascript:void(0)">HandlerImageBasedSearch</a>
+              </li>
+              <li title="HandlerMyOpenCases" id="item-HandlerMyOpenCases" class="nav-item class public" onclick="goToLocation('HandlerMyOpenCases.html');">
+                <a tabindex="1" href="javascript:void(0)">HandlerMyOpenCases</a>
+              </li>
+              <li title="HandlerNext" id="item-HandlerNext" class="nav-item class public" onclick="goToLocation('HandlerNext.html');">
+                <a tabindex="1" href="javascript:void(0)">HandlerNext</a>
+              </li>
+              <li title="HandlerPipeline" id="item-HandlerPipeline" class="nav-item class public" onclick="goToLocation('HandlerPipeline.html');">
+                <a tabindex="1" href="javascript:void(0)">HandlerPipeline</a>
+              </li>
+              <li title="HandlerQuarter" id="item-HandlerQuarter" class="nav-item class public" onclick="goToLocation('HandlerQuarter.html');">
+                <a tabindex="1" href="javascript:void(0)">HandlerQuarter</a>
+              </li>
+              <li title="HandlerReport" id="item-HandlerReport" class="nav-item class public" onclick="goToLocation('HandlerReport.html');">
+                <a tabindex="1" href="javascript:void(0)">HandlerReport</a>
+              </li>
+              <li title="HandlerSOQL" id="item-HandlerSOQL" class="nav-item class public" onclick="goToLocation('HandlerSOQL.html');">
+                <a tabindex="1" href="javascript:void(0)">HandlerSOQL</a>
+              </li>
+              <li title="HandlerTopOpportunities" id="item-HandlerTopOpportunities" class="nav-item class public" onclick="goToLocation('HandlerTopOpportunities.html');">
+                <a tabindex="1" href="javascript:void(0)">HandlerTopOpportunities</a>
+              </li>
+              <li title="HandlerTravelApproval" id="item-HandlerTravelApproval" class="nav-item class public" onclick="goToLocation('HandlerTravelApproval.html');">
+                <a tabindex="1" href="javascript:void(0)">HandlerTravelApproval</a>
+              </li>
+            </ul>
+          </details>
+          <details id="Dreamhouse_Slack_Bot" class="group-name">
+            <summary id="header-Dreamhouse_Slack_Bot" class="nav-header">
+              <span>Dreamhouse Slack Bot</span>
+            </summary>
+            <ul>
+              <!-- menu items -->
+              <li title="PostPriceChangeToSlack" id="item-PostPriceChangeToSlack" class="nav-item class public" onclick="goToLocation('PostPriceChangeToSlack.html');">
+                <a tabindex="1" href="javascript:void(0)">PostPriceChangeToSlack</a>
+              </li>
+              <li title="PushPriceChangeNotification" id="item-PushPriceChangeNotification" class="nav-item class public" onclick="goToLocation('PushPriceChangeNotification.html');">
+                <a tabindex="1" href="javascript:void(0)">PushPriceChangeNotification</a>
+              </li>
+              <li title="SlackOpportunityPublisher" id="item-SlackOpportunityPublisher" class="nav-item class public" onclick="goToLocation('SlackOpportunityPublisher.html');">
+                <a tabindex="1" href="javascript:void(0)">SlackOpportunityPublisher</a>
+              </li>
+            </ul>
+          </details>
+          <details id="Dreamhouse_Utils" class="group-name">
+            <summary id="header-Dreamhouse_Utils" class="nav-header">
+              <span>Dreamhouse Utils</span>
+            </summary>
+            <ul>
+              <!-- menu items -->
+              <li title="HttpFormBuilder" id="item-HttpFormBuilder" class="nav-item class public" onclick="goToLocation('HttpFormBuilder.html');">
+                <a tabindex="1" href="javascript:void(0)">HttpFormBuilder</a>
+              </li>
+              <li title="JWT" id="item-JWT" class="nav-item class public" onclick="goToLocation('JWT.html');">
+                <a tabindex="1" href="javascript:void(0)">JWT</a>
+              </li>
+              <li title="JWTBearerFlow" id="item-JWTBearerFlow" class="nav-item class public" onclick="goToLocation('JWTBearerFlow.html');">
+                <a tabindex="1" href="javascript:void(0)">JWTBearerFlow</a>
+              </li>
+            </ul>
+          </details>
+          <details id="Global_Utils" class="group-name">
+            <summary id="header-Global_Utils" class="nav-header">
+              <span>Global Utils</span>
+            </summary>
+            <ul>
+              <!-- menu items -->
+              <li title="ApexDox" id="item-ApexDox" class="nav-item class public" onclick="goToLocation('ApexDox.html');">
+                <a tabindex="1" href="javascript:void(0)">ApexDox</a>
+              </li>
+              <li title="ArrayUtils" id="item-ArrayUtils" class="nav-item class global" onclick="goToLocation('ArrayUtils.html');">
+                <a tabindex="1" href="javascript:void(0)">ArrayUtils</a>
+              </li>
+              <li title="IllegalStateException" id="item-IllegalStateException" class="nav-item class global" onclick="goToLocation('IllegalStateException.html');">
+                <a tabindex="1" href="javascript:void(0)">IllegalStateException</a>
+              </li>
+              <li title="IObjectComparator" id="item-IObjectComparator" class="nav-item class global" onclick="goToLocation('IObjectComparator.html');">
+                <a tabindex="1" href="javascript:void(0)">IObjectComparator</a>
+              </li>
+              <li title="ISObjectComparator" id="item-ISObjectComparator" class="nav-item class global" onclick="goToLocation('ISObjectComparator.html');">
+                <a tabindex="1" href="javascript:void(0)">ISObjectComparator</a>
+              </li>
+              <li title="MyRestResource" id="item-MyRestResource" class="nav-item class global" onclick="goToLocation('MyRestResource.html');">
+                <a tabindex="1" href="javascript:void(0)">MyRestResource</a>
+              </li>
+              <li title="MyWebService" id="item-MyWebService" class="nav-item class global" onclick="goToLocation('MyWebService.html');">
+                <a tabindex="1" href="javascript:void(0)">MyWebService</a>
+              </li>
+              <li title="PrimitiveComparator" id="item-PrimitiveComparator" class="nav-item class global" onclick="goToLocation('PrimitiveComparator.html');">
+                <a tabindex="1" href="javascript:void(0)">PrimitiveComparator</a>
+              </li>
+              <li title="Status" id="item-Status" class="nav-item class public" onclick="goToLocation('Status.html');">
+                <a tabindex="1" href="javascript:void(0)">Status</a>
+              </li>
+              <li title="StopWatch" id="item-StopWatch" class="nav-item class global" onclick="goToLocation('StopWatch.html');">
+                <a tabindex="1" href="javascript:void(0)">StopWatch</a>
+              </li>
+            </ul>
+          </details>
+          <details id="Miscellaneous" class="group-name">
+            <summary id="header-Miscellaneous" class="nav-header">
+              <span>Miscellaneous</span>
+            </summary>
+            <ul>
+              <!-- menu items -->
+              <li title="LIFXController" id="item-LIFXController" class="nav-item class public" onclick="goToLocation('LIFXController.html');">
+                <a tabindex="1" href="javascript:void(0)">LIFXController</a>
+              </li>
+              <li title="PropertyController" id="item-PropertyController" class="nav-item class global" onclick="goToLocation('PropertyController.html');">
+                <a tabindex="1" href="javascript:void(0)">PropertyController</a>
+              </li>
+              <li title="PropertyListPage" id="item-PropertyListPage" class="nav-item class public" onclick="goToLocation('PropertyListPage.html');">
+                <a tabindex="1" href="javascript:void(0)">PropertyListPage</a>
+              </li>
+              <li title="SampleDataController" id="item-SampleDataController" class="nav-item class public" onclick="goToLocation('SampleDataController.html');">
+                <a tabindex="1" href="javascript:void(0)">SampleDataController</a>
+              </li>
+            </ul>
+          </details>
+        </nav>
+      </div>
+    </div>
+    <table id="content">
+      <tr>
+        <td class="scoping-panel">
+          Show: <input type="checkbox" checked="true" id="cbx-all" onclick="toggleAllScopes(this.checked);" />
+          <label for="cbx-all">All</label>&nbsp;&nbsp;
+          <input type="checkbox" checked="true" id="cbx-global" onclick="toggleScope('global', this.checked);" />
+          <label for="cbx-global">
+            global
+          </label>&nbsp;&nbsp;<input type="checkbox" checked="true" id="cbx-public" onclick="toggleScope('public', this.checked);" />
+          <label for="cbx-public">
+            public
+          </label>&nbsp;&nbsp;<input type="checkbox" checked="true" id="cbx-protected" onclick="toggleScope('protected', this.checked);" />
+          <label for="cbx-protected">
+            protected
+          </label>&nbsp;&nbsp;<input type="checkbox" checked="true" id="cbx-private" onclick="toggleScope('private', this.checked);" />
+          <label for="cbx-private">
+            private
+          </label>&nbsp;&nbsp;<input type="checkbox" checked="true" id="cbx-webservice" onclick="toggleScope('webservice', this.checked);" />
+          <label for="cbx-webservice">
+            webService
+          </label>&nbsp;&nbsp;<input type="checkbox" checked="true" id="cbx-testmethod" onclick="toggleScope('testmethod', this.checked);" />
+          <label for="cbx-testmethod">
+            testMethod
+          </label>
+        </td>
+      </tr>
+      <tr>
+        <td class="doc-page">
+
+          <div class="section">
+
+            <h2 class="class-title top-level-type" id="EinsteinVisionController">
+
+              <a target="_blank" rel="noopener noreferrer" title="Go to source" class="source-link" href="https://github.com/no-stack-dub-sack/apexdox-sample-app/tree/master/force-app/main/default/classes/EinsteinVisionController.cls#L13">
+                EinsteinVisionController
+              </a>
+            </h2>
+            <div class="class-container">
+
+              <div class="class-description">
+                The <code class="code-inline">EinsteinVisionController</code> class. Does some cool stuff with Einstein Vision. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad veniam, quis nostrud exercitation ullamco laboris nis.
+              </div>
+              <div class="class-subtitle">
+                Signature
+              </div>
+
+              <div class="class-signature">
+                global with sharing class EinsteinVisionController
+              </div>
+              <div class="class-subtitle">
+                See
+              </div>
+              <div class="class-subtitle-description">
+                <a target="_blank" rel="noopener noreferrer" href="https://github.com/dreamhouseapp/dreamhouse-sfdx/blob/master/LICENSE">License</a>, <a target="_blank" rel="noopener noreferrer" href="https://github.com/dreamhouseapp/dreamhouse-sfdx">Github</a>
+              </div><br />Salesforce.com<br />Jul 2017
+            </div>
+            <div class="subsection properties EinsteinVisionController">
+              <h3 class="subsection-title properties">EinsteinVisionController Properties</h2>
+                <table class="attributes-table properties">
+
+                  <tr>
+                    <th>Name</th>
+                    <th>Signature</th>
+
+                    <th>Description</th>
+                  </tr>
+                  <tr class="property private">
+                    <td class="attribute-name">
+                      <a target="_blank" rel="noopener noreferrer" title="Go to source" class="source-link" href="https://github.com/no-stack-dub-sack/apexdox-sample-app/tree/master/force-app/main/default/classes/EinsteinVisionController.cls#L18">
+                        settings
+                      </a></td>
+                    <td>
+                      <div class="attribute-signature">
+                        private static final Dreamhouse_Settings__c settings
+                      </div>
+                    </td>
+
+
+                    <td class="attribute-description">
+                      Default settings for the Dreamhouse org
+                    </td>
+                  </tr>
+                  <tr class="property public">
+                    <td class="attribute-name">
+                      <a target="_blank" rel="noopener noreferrer" title="Go to source" class="source-link" href="https://github.com/no-stack-dub-sack/apexdox-sample-app/tree/master/force-app/main/default/classes/EinsteinVisionController.cls#L16">
+                        VISION_API
+                      </a></td>
+                    <td>
+                      <div class="attribute-signature">
+                        public static String VISION_API
+                      </div>
+                    </td>
+
+
+                    <td class="attribute-description">
+                      Vision API endpoint.
+                    </td>
+                  </tr>
+                </table>
+            </div>
+            <div class="subsection methods">
+              <h3 class="subsection-title methods">EinsteinVisionController Methods</h3>
+              <div class="methods-container">
+                <ul class="methods-toc">
+                  <li class="method public">
+                    <a class="methods-toc__entry " href="#EinsteinVisionController.createDataset">
+                      createDataset (pathToZip)
+                    </a>
+
+                    <div class="methods-toc__description">
+                      Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse.
+                    </div>
+                  </li>
+                  <li class="method public">
+                    <a class="methods-toc__entry " href="#EinsteinVisionController.deleteDataset">
+                      deleteDataset (datasetId)
+                    </a>
+
+                    <div class="methods-toc__description">
+                      Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse.
+                    </div>
+                  </li>
+                  <li class="method private">
+                    <a class="methods-toc__entry " href="#EinsteinVisionController.getAccessToken">
+                      getAccessToken ()
+                    </a>
+
+                    <div class="methods-toc__description">
+                      You can upload the &#39;einstein_platform.pem&#39; into your Salesforce org as &#39;File&#39; sObject and read it as below
+                    </div>
+                  </li>
+                  <li class="method public">
+                    <a class="methods-toc__entry " href="#EinsteinVisionController.getDatasets">
+                      getDatasets ()
+                    </a>
+
+                    <div class="methods-toc__description">
+                      Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse.
+                    </div>
+                  </li>
+                  <li class="method public">
+                    <a class="methods-toc__entry " href="#EinsteinVisionController.getModelsByDataset">
+                      getModelsByDataset (datasetId)
+                    </a>
+
+                    <div class="methods-toc__description">
+                      Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse.
+                    </div>
+                  </li>
+                  <li class="method public">
+                    <a class="methods-toc__entry " href="#EinsteinVisionController.predict">
+                      predict (fileName, content, modelId)
+                    </a>
+
+                    <div class="methods-toc__description">
+                      Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+                    </div>
+                  </li>
+                  <li class="method public">
+                    <a class="methods-toc__entry " href="#EinsteinVisionController.predictDemo">
+                      predictDemo (fileName, content)
+                    </a>
+
+                    <div class="methods-toc__description">
+                      Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse
+                    </div>
+                  </li>
+                  <li class="method private">
+                    <a class="methods-toc__entry " href="#EinsteinVisionController.predictInternal">
+                      predictInternal (sample, access_token, model, isBase64)
+                    </a>
+
+                    <div class="methods-toc__description">
+                      Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse. Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse.
+                    </div>
+                  </li>
+                  <li class="method public">
+                    <a class="methods-toc__entry " href="#EinsteinVisionController.predictReal">
+                      predictReal (fileName, content, modelId)
+                    </a>
+
+                    <div class="methods-toc__description">
+                      Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+                    </div>
+                  </li>
+                  <li class="method public">
+                    <a class="methods-toc__entry " href="#EinsteinVisionController.trainModel">
+                      trainModel (modelName, datasetId)
+                    </a>
+
+                    <div class="methods-toc__description">
+                      Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse.
+                    </div>
+                  </li>
+                </ul>
+                <div class="method public">
+                  <h4 class="method-title " id="EinsteinVisionController.createDataset">
+
+                    <a target="_blank" rel="noopener noreferrer" title="Go to source" class="source-link" href="https://github.com/no-stack-dub-sack/apexdox-sample-app/tree/master/force-app/main/default/classes/EinsteinVisionController.cls#L216">
+                      createDataset(pathToZip)
+                    </a>
+                  </h4>
+                  <div class="method-description">
+                    Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse.
+                  </div>
+                  <div class="method-subtitle">
+                    Signature
+                  </div>
+                  <div class="method-annotations">@AuraEnabled</div>
+                  <div class="method-signature">
+                    public static String createDataset(String pathToZip)
+                  </div>
+                  <div class="method-subtitle">Parameters</div>
+                  <div class="param-name">pathToZip</div>
+                  <div class="param-type">
+                    Type: <code class="code-inline">String</code>
+                  </div>
+                  <div class="param-description">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse</div>
+                  <div class="method-subtitle">
+                    Returns
+                  </div>
+                  <div class="method-subtitle-description">
+                    Returns an empty string or an error message.
+                  </div>
+                </div>
+                <div class="method public">
+                  <h4 class="method-title " id="EinsteinVisionController.deleteDataset">
+
+                    <a target="_blank" rel="noopener noreferrer" title="Go to source" class="source-link" href="https://github.com/no-stack-dub-sack/apexdox-sample-app/tree/master/force-app/main/default/classes/EinsteinVisionController.cls#L189">
+                      deleteDataset(datasetId)
+                    </a>
+                  </h4>
+                  <div class="method-description">
+                    Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse.
+                  </div>
+                  <div class="method-subtitle">
+                    Signature
+                  </div>
+                  <div class="method-annotations">@AuraEnabled</div>
+                  <div class="method-signature">
+                    public static String deleteDataset(Integer datasetId)
+                  </div>
+                  <div class="method-subtitle">Parameters</div>
+                  <div class="param-name">datasetId</div>
+                  <div class="param-type">
+                    Type: <code class="code-inline">Integer</code>
+                  </div>
+                  <div class="param-description">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse</div>
+                  <div class="method-subtitle">
+                    Returns
+                  </div>
+                  <div class="method-subtitle-description">
+                    Returns an empty string or an error message.
+                  </div>
+                </div>
+                <div class="method private">
+                  <h4 class="method-title " id="EinsteinVisionController.getAccessToken">
+
+                    <a target="_blank" rel="noopener noreferrer" title="Go to source" class="source-link" href="https://github.com/no-stack-dub-sack/apexdox-sample-app/tree/master/force-app/main/default/classes/EinsteinVisionController.cls#L35">
+                      getAccessToken()
+                    </a>
+                  </h4>
+                  <div class="method-description">
+                    You can upload the &#39;einstein_platform.pem&#39; into your Salesforce org as &#39;File&#39; sObject and read it as below
+                  </div>
+                  <div class="method-subtitle">
+                    Signature
+                  </div>
+
+                  <div class="method-signature">
+                    private static String getAccessToken()
+                  </div>
+                </div>
+                <div class="method public">
+                  <h4 class="method-title " id="EinsteinVisionController.getDatasets">
+
+                    <a target="_blank" rel="noopener noreferrer" title="Go to source" class="source-link" href="https://github.com/no-stack-dub-sack/apexdox-sample-app/tree/master/force-app/main/default/classes/EinsteinVisionController.cls#L136">
+                      getDatasets()
+                    </a>
+                  </h4>
+                  <div class="method-description">
+                    Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse.
+                  </div>
+                  <div class="method-subtitle">
+                    Signature
+                  </div>
+                  <div class="method-annotations">@AuraEnabled</div>
+                  <div class="method-signature">
+                    public static String getDatasets()
+                  </div>
+                  <div class="method-subtitle">
+                    Returns
+                  </div>
+                  <div class="method-subtitle-description">
+                    Returns an empty string or an error message.
+                  </div>
+                </div>
+                <div class="method public">
+                  <h4 class="method-title " id="EinsteinVisionController.getModelsByDataset">
+
+                    <a target="_blank" rel="noopener noreferrer" title="Go to source" class="source-link" href="https://github.com/no-stack-dub-sack/apexdox-sample-app/tree/master/force-app/main/default/classes/EinsteinVisionController.cls#L162">
+                      getModelsByDataset(datasetId)
+                    </a>
+                  </h4>
+                  <div class="method-description">
+                    Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse.
+                  </div>
+                  <div class="method-subtitle">
+                    Signature
+                  </div>
+                  <div class="method-annotations">@AuraEnabled</div>
+                  <div class="method-signature">
+                    public static String getModelsByDataset(Integer datasetId)
+                  </div>
+                  <div class="method-subtitle">Parameters</div>
+                  <div class="param-name">datasetId</div>
+                  <div class="param-type">
+                    Type: <code class="code-inline">Integer</code>
+                  </div>
+                  <div class="param-description">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse</div>
+                  <div class="method-subtitle">
+                    Returns
+                  </div>
+                  <div class="method-subtitle-description">
+                    Returns an empty string or an error message.
+                  </div>
+                </div>
+                <div class="method public">
+                  <h4 class="method-title " id="EinsteinVisionController.predict">
+
+                    <a target="_blank" rel="noopener noreferrer" title="Go to source" class="source-link" href="https://github.com/no-stack-dub-sack/apexdox-sample-app/tree/master/force-app/main/default/classes/EinsteinVisionController.cls#L74">
+                      predict(fileName, content, modelId)
+                    </a>
+                  </h4>
+                  <div class="method-description">
+                    Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+                  </div>
+                  <div class="method-subtitle">
+                    Signature
+                  </div>
+                  <div class="method-annotations">@AuraEnabled</div>
+                  <div class="method-signature">
+                    public static List&lt;Prediction&gt; predict(String fileName, String content, String modelId)
+                  </div>
+                  <div class="method-subtitle">Parameters</div>
+                  <div class="param-name">fileName</div>
+                  <div class="param-type">
+                    Type: <code class="code-inline">String</code>
+                  </div>
+                  <div class="param-description">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse</div>
+                  <div class="param-name">content</div>
+                  <div class="param-type">
+                    Type: <code class="code-inline">String</code>
+                  </div>
+                  <div class="param-description">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse</div>
+                  <div class="param-name">modelId</div>
+                  <div class="param-type">
+                    Type: <code class="code-inline">String</code>
+                  </div>
+                  <div class="param-description">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse</div>
+                  <div class="method-subtitle">
+                    Returns
+                  </div>
+                  <div class="method-subtitle-description">
+                    Returns <code class="code-inline">List&lt;Prediction&gt;</code>, which is super awesome.
+                  </div>
+                </div>
+                <div class="method public">
+                  <h4 class="method-title " id="EinsteinVisionController.predictDemo">
+
+                    <a target="_blank" rel="noopener noreferrer" title="Go to source" class="source-link" href="https://github.com/no-stack-dub-sack/apexdox-sample-app/tree/master/force-app/main/default/classes/EinsteinVisionController.cls#L111">
+                      predictDemo(fileName, content)
+                    </a>
+                  </h4>
+                  <div class="method-description">
+                    Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse
+                  </div>
+                  <div class="method-subtitle">
+                    Signature
+                  </div>
+                  <div class="method-annotations">@AuraEnabled</div>
+                  <div class="method-signature">
+                    public static List&lt;Prediction&gt; predictDemo(String fileName, String content)
+                  </div>
+                  <div class="method-subtitle">Parameters</div>
+                  <div class="param-name">fileName</div>
+                  <div class="param-type">
+                    Type: <code class="code-inline">String</code>
+                  </div>
+                  <div class="param-description">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse</div>
+                  <div class="param-name">content</div>
+                  <div class="param-type">
+                    Type: <code class="code-inline">String</code>
+                  </div>
+                  <div class="param-description">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse</div>
+                  <div class="method-subtitle">
+                    Returns
+                  </div>
+                  <div class="method-subtitle-description">
+                    <code class="code-inline">List&lt;Prediction&gt;</code> return description.
+                  </div>
+                </div>
+                <div class="method private">
+                  <h4 class="method-title " id="EinsteinVisionController.predictInternal">
+
+                    <a target="_blank" rel="noopener noreferrer" title="Go to source" class="source-link" href="https://github.com/no-stack-dub-sack/apexdox-sample-app/tree/master/force-app/main/default/classes/EinsteinVisionController.cls#L299">
+                      predictInternal(sample, access_token, model, isBase64)
+                    </a>
+                  </h4>
+                  <div class="method-description">
+                    Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse. Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse.
+                  </div>
+                  <div class="method-subtitle">
+                    Signature
+                  </div>
+
+                  <div class="method-signature">
+                    private static List&lt;Prediction&gt; predictInternal(String sample, String access_token, String model, boolean isBase64)
+                  </div>
+                  <div class="method-subtitle">Parameters</div>
+                  <div class="param-name">sample</div>
+                  <div class="param-type">
+                    Type: <code class="code-inline">String</code>
+                  </div>
+                  <div class="param-description">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse.</div>
+                  <div class="param-name">access_token</div>
+                  <div class="param-type">
+                    Type: <code class="code-inline">String</code>
+                  </div>
+                  <div class="param-description">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse.</div>
+                  <div class="param-name">model</div>
+                  <div class="param-type">
+                    Type: <code class="code-inline">String</code>
+                  </div>
+                  <div class="param-description">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse.</div>
+                  <div class="param-name">isBase64</div>
+                  <div class="param-type">
+                    Type: <code class="code-inline">boolean</code>
+                  </div>
+                  <div class="param-description">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse.</div>
+                  <div class="method-subtitle">
+                    Returns
+                  </div>
+                  <div class="method-subtitle-description">
+                    A list of <code class="code-inline">Prediction</code> records.
+                  </div>
+                </div>
+                <div class="method public">
+                  <h4 class="method-title " id="EinsteinVisionController.predictReal">
+
+                    <a target="_blank" rel="noopener noreferrer" title="Go to source" class="source-link" href="https://github.com/no-stack-dub-sack/apexdox-sample-app/tree/master/force-app/main/default/classes/EinsteinVisionController.cls#L93">
+                      predictReal(fileName, content, modelId)
+                    </a>
+                  </h4>
+                  <div class="method-description">
+                    Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+                  </div>
+                  <div class="method-subtitle">
+                    Signature
+                  </div>
+                  <div class="method-annotations">@AuraEnabled</div>
+                  <div class="method-signature">
+                    public static List&lt;Prediction&gt; predictReal(String fileName, String content, String modelId)
+                  </div>
+                  <div class="method-subtitle">Parameters</div>
+                  <div class="param-name">fileName</div>
+                  <div class="param-type">
+                    Type: <code class="code-inline">String</code>
+                  </div>
+                  <div class="param-description">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse</div>
+                  <div class="param-name">content</div>
+                  <div class="param-type">
+                    Type: <code class="code-inline">String</code>
+                  </div>
+                  <div class="param-description">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse</div>
+                  <div class="param-name">modelId</div>
+                  <div class="param-type">
+                    Type: <code class="code-inline">String</code>
+                  </div>
+                  <div class="param-description">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse</div>
+                  <div class="method-subtitle">
+                    Returns
+                  </div>
+                  <div class="method-subtitle-description">
+                    Returns <code class="code-inline">List&lt;Prediction&gt;</code>, which is super awesome.
+                  </div>
+                  <div class="method-subtitle">
+                    Exceptions
+                  </div>
+                  <div class="method-subtitle-description">
+                    Throws <code class="code-inline">AuraHandledException</code> if access token cannot be retrieved.
+                  </div>
+                </div>
+                <div class="method public">
+                  <h4 class="method-title " id="EinsteinVisionController.trainModel">
+
+                    <a target="_blank" rel="noopener noreferrer" title="Go to source" class="source-link" href="https://github.com/no-stack-dub-sack/apexdox-sample-app/tree/master/force-app/main/default/classes/EinsteinVisionController.cls#L255">
+                      trainModel(modelName, datasetId)
+                    </a>
+                  </h4>
+                  <div class="method-description">
+                    Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse.
+                  </div>
+                  <div class="method-subtitle">
+                    Signature
+                  </div>
+                  <div class="method-annotations">@AuraEnabled</div>
+                  <div class="method-signature">
+                    public static String trainModel(String modelName, Integer datasetId)
+                  </div>
+                  <div class="method-subtitle">Parameters</div>
+                  <div class="param-name">modelName</div>
+                  <div class="param-type">
+                    Type: <code class="code-inline">String</code>
+                  </div>
+                  <div class="param-description">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse.</div>
+                  <div class="param-name">datasetId</div>
+                  <div class="param-type">
+                    Type: <code class="code-inline">Integer</code>
+                  </div>
+                  <div class="param-description">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse.</div>
+                  <div class="method-subtitle">
+                    Returns
+                  </div>
+                  <div class="method-subtitle-description">
+                    Returns an empty string or an error message.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="section">
+
+            <h2 class="class-title " id="EinsteinVisionController.Prediction">
+
+              <a target="_blank" rel="noopener noreferrer" title="Go to source" class="source-link" href="https://github.com/no-stack-dub-sack/apexdox-sample-app/tree/master/force-app/main/default/classes/EinsteinVisionController.cls#L21">
+                EinsteinVisionController.Prediction
+              </a>
+            </h2>
+            <div class="class-container">
+
+              <div class="class-description">
+                <code class="code-inline">Prediction</code> inner class.
+              </div>
+              <div class="class-subtitle">
+                Signature
+              </div>
+
+              <div class="class-signature">
+                public class Prediction
+              </div>
+            </div>
+            <div class="subsection properties EinsteinVisionController_Prediction">
+              <h3 class="subsection-title properties">EinsteinVisionController.Prediction Properties</h2>
+                <table class="attributes-table properties">
+
+                  <tr>
+                    <th>Name</th>
+                    <th>Signature</th>
+                    <th>Annotations</th>
+
+                  </tr>
+                  <tr class="property public">
+                    <td class="attribute-name">
+                      <a target="_blank" rel="noopener noreferrer" title="Go to source" class="source-link" href="https://github.com/no-stack-dub-sack/apexdox-sample-app/tree/master/force-app/main/default/classes/EinsteinVisionController.cls#L23">
+                        label
+                      </a></td>
+                    <td>
+                      <div class="attribute-signature">
+                        public String label
+                      </div>
+                    </td>
+                    <td>
+                      <div class="prop-annotations">@AuraEnabled</div>
+                    </td>
+
+                  </tr>
+                  <tr class="property public">
+                    <td class="attribute-name">
+                      <a target="_blank" rel="noopener noreferrer" title="Go to source" class="source-link" href="https://github.com/no-stack-dub-sack/apexdox-sample-app/tree/master/force-app/main/default/classes/EinsteinVisionController.cls#L25">
+                        probability
+                      </a></td>
+                    <td>
+                      <div class="attribute-signature">
+                        public Double probability
+                      </div>
+                    </td>
+                    <td>
+                      <div class="prop-annotations">@AuraEnabled</div>
+                    </td>
+
+                  </tr>
+                </table>
+            </div>
+            <div class="subsection methods">
+              <h3 class="subsection-title methods">EinsteinVisionController.Prediction Methods</h3>
+              <div class="methods-container">
+                <ul class="methods-toc">
+                  <li class="method public">
+                    <a class="methods-toc__entry " href="#EinsteinVisionController.Prediction.getLabelAndProbability">
+                      getLabelAndProbability ()
+                    </a>
+
+                  </li>
+                </ul>
+                <div class="method public">
+                  <h4 class="method-title " id="EinsteinVisionController.Prediction.getLabelAndProbability">
+
+                    <a target="_blank" rel="noopener noreferrer" title="Go to source" class="source-link" href="https://github.com/no-stack-dub-sack/apexdox-sample-app/tree/master/force-app/main/default/classes/EinsteinVisionController.cls#L27">
+                      getLabelAndProbability()
+                    </a>
+                  </h4>
+                  <div class="method-subtitle">
+                    Signature
+                  </div>
+
+                  <div class="method-signature">
+                    public String getLabelAndProbability()
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="footer">
+
+          <div>
+            <a href="https://github.com/no-stack-dub-sack/apexdox-vscode" target="_blank" rel="noopener noreferrer">
+              Powered By ApexDox VS Code
+            </a>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </body>
+
+</html>

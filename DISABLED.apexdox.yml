@@ -1,0 +1,35 @@
+# REMOVE THIS LINE and DISABLED. from the file name to enable this file
+engine:
+  source:
+    - path: "${workspaceFolder}/force-app/main/default/classes"
+      sourceUrl: https://github.com/no-stack-dub-sack/apexdox-sample-app/tree/master/force-app/main/default/classes
+    - path: "${workspaceFolder}/force-app/global-utils/default/classes"
+      sourceUrl: https://github.com/no-stack-dub-sack/apexdox-sample-app/tree/master/force-app/global-utils/default/classes
+  targetDirectory: "${workspaceFolder}/sample-docs"
+  excludes:
+    - "*Test.cls"
+  title: ApexDox Sample Project
+  subtitle: Replace this logo, title and subtitle using custom settings.
+  sortOrder: alpha
+  cleanDir: false
+  showTOCSnippets: true
+  scope:
+    - global
+    - public
+    - protected
+    - private
+    - webService
+    - testMethod
+  homePagePath: "${workspaceFolder}/doc-assets/Dreamhouse.html"
+  pages:
+    - "${workspaceFolder}/doc-assets/Funny.html"
+  assets:
+    - "${workspaceFolder}/doc-assets/logo.png"
+    - "${workspaceFolder}/doc-assets/favicon.png"
+    - "${workspaceFolder}/doc-assets/bots-icon.png"
+    - "${workspaceFolder}/doc-assets/meme.jpg"
+  port: 9090
+docblock:
+  alignItems: false
+  spacious: true
+  omitDescriptionTag: true

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>ApexDox Sample Project</title>
+    <meta charset="UTF-8">
+    <script type="module" src="./assets/index.js"></script>
+    <script type="module" src="./assets/search-idx.js"></script>
+    <script type="module" src="./assets/search.js"></script>
+    <script charset="UTF-8" src="./assets/highlight.js"></script>
+    <script charset="UTF-8" src="./assets/mark.js"></script>
+    <script charset="UTF-8" src="./assets/lunr.js"></script>
+    <link rel="stylesheet" href="./assets/highlight.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/index.css" />
+    <link rel="shortcut icon" type="image/png" href="./assets/favicon.png" />
+  </head>
+
+  <body>
+    <div id="side-bar">
+
+      <div id="logo-container">
+        <div class="title">
+          ApexDox Sample Project
+        </div>
+        <img src="assets/logo.png" />
+        <div class="subtitle">
+          Replace this logo, title and subtitle using custom settings.
+        </div>
+      </div>
+      <div id="search-wrapper">
+        <div class="search-icon"></div>
+        <input id="search-input" type="text" autocomplete="off" placeholder="Search...">
+      </div>
+      <ul id="search-results" class=""></ul>
+      <div class="navbar">
+        <nav role="navigation">
+          <a class="nav-header" id="home" href="javascript:void(0)" onclick="goToLocation('index.html');">
+            Home
+          </a>
+          <details id="Dreamhouse_Analytics" class="group-name">
+            <summary id="header-Dreamhouse_Analytics" class="nav-header">
+              <span>Dreamhouse Analytics</span>
+            </summary>
+            <ul>
+              <!-- menu items -->
+              <li title="EinsteinVisionController" id="item-EinsteinVisionController" class="nav-item class global" onclick="goToLocation('EinsteinVisionController.html');">
+                <a tabindex="1" href="javascript:void(0)">EinsteinVisionController</a>
+              </li>
+            </ul>
+          </details>
+          <details id="Dreamhouse_Bot" class="group-name">
+            <summary id="header-Dreamhouse_Bot" class="nav-header">
+              <a href="javascript:void(0)" title="See Class Group info" onclick="goToLocation('Bot.html');">Dreamhouse Bot</a>
+            </summary>
+            <ul>
+              <!-- menu items -->
+              <li title="HandlerMapping" id="item-HandlerMapping" class="nav-item class private" onclick="goToLocation('HandlerMapping.html');">
+                <a tabindex="1" href="javascript:void(0)">HandlerMapping</a>
+              </li>
+            </ul>
+          </details>
+          <details id="Global_Utils" class="group-name">
+            <summary id="header-Global_Utils" class="nav-header">
+              <span>Global Utils</span>
+            </summary>
+            <ul>
+              <!-- menu items -->
+              <li title="ArrayUtils" id="item-ArrayUtils" class="nav-item class global" onclick="goToLocation('ArrayUtils.html');">
+                <a tabindex="1" href="javascript:void(0)">ArrayUtils</a>
+              </li>
+              <li title="IllegalStateException" id="item-IllegalStateException" class="nav-item class global" onclick="goToLocation('IllegalStateException.html');">
+                <a tabindex="1" href="javascript:void(0)">IllegalStateException</a>
+              </li>
+              <li title="IObjectComparator" id="item-IObjectComparator" class="nav-item class global" onclick="goToLocation('IObjectComparator.html');">
+                <a tabindex="1" href="javascript:void(0)">IObjectComparator</a>
+              </li>
+              <li title="ISObjectComparator" id="item-ISObjectComparator" class="nav-item class global" onclick="goToLocation('ISObjectComparator.html');">
+                <a tabindex="1" href="javascript:void(0)">ISObjectComparator</a>
+              </li>
+              <li title="MyRestResource" id="item-MyRestResource" class="nav-item class global" onclick="goToLocation('MyRestResource.html');">
+                <a tabindex="1" href="javascript:void(0)">MyRestResource</a>
+              </li>
+              <li title="MyWebService" id="item-MyWebService" class="nav-item class global" onclick="goToLocation('MyWebService.html');">
+                <a tabindex="1" href="javascript:void(0)">MyWebService</a>
+              </li>
+              <li title="PrimitiveComparator" id="item-PrimitiveComparator" class="nav-item class global" onclick="goToLocation('PrimitiveComparator.html');">
+                <a tabindex="1" href="javascript:void(0)">PrimitiveComparator</a>
+              </li>
+              <li title="StopWatch" id="item-StopWatch" class="nav-item class global" onclick="goToLocation('StopWatch.html');">
+                <a tabindex="1" href="javascript:void(0)">StopWatch</a>
+              </li>
+            </ul>
+          </details>
+          <details id="Miscellaneous" class="group-name">
+            <summary id="header-Miscellaneous" class="nav-header">
+              <span>Miscellaneous</span>
+            </summary>
+            <ul>
+              <!-- menu items -->
+              <li title="PropertyController" id="item-PropertyController" class="nav-item class global" onclick="goToLocation('PropertyController.html');">
+                <a tabindex="1" href="javascript:void(0)">PropertyController</a>
+              </li>
+            </ul>
+          </details>
+        </nav>
+      </div>
+    </div>
+    <table id="content">
+      <tr>
+        <td class="scoping-panel">
+          Show: <input type="checkbox" checked="true" id="cbx-all" onclick="toggleAllScopes(this.checked);" />
+          <label for="cbx-all">All</label>&nbsp;&nbsp;
+          <input type="checkbox" checked="true" id="cbx-global" onclick="toggleScope('global', this.checked);" />
+          <label for="cbx-global">
+            global
+          </label>
+        </td>
+      </tr>
+      <tr>
+        <td class="doc-page">
+
+          <div class="section">
+
+            <h2 class="class-title top-level-type" id="HandlerMapping">
+
+              <a target="_blank" rel="noopener noreferrer" title="Go to source" class="source-link" href="https://github.com/no-stack-dub-sack/apexdox-sample-app/tree/master/force-app/main/default/classes/HandlerMapping.cls#L24">
+                HandlerMapping
+              </a>
+            </h2>
+            <div class="class-container">
+
+              <div class="class-description">
+                Handler Mapping inner class. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nis. <br><br> If you&#39;re reading this in code, this is the only class in the &quot;Dreamhouse Bot&quot; group which includes a <code class="code-inline">group-content</code> tag. It only needs to be defined once for the entire group.
+              </div>
+              <div class="class-subtitle">
+                Signature
+              </div>
+
+              <div class="class-signature">
+                class HandlerMapping
+              </div>
+              <div class="class-subtitle">
+                See
+              </div>
+              <div class="class-subtitle-description">
+                <a target="_blank" rel="noopener noreferrer" href="https://github.com/dreamhouseapp/dreamhouse-sfdx/blob/master/LICENSE">License</a>, <a target="_blank" rel="noopener noreferrer" href="https://github.com/dreamhouseapp/dreamhouse-sfdx">Github</a>, <span title="A valid link could not be created with this identifier.">ThisClass.andMethodDoNotExist</span>
+              </div><br />Salesforce.com<br />Jul 2017
+            </div>
+            <div class="subsection methods">
+              <h3 class="subsection-title methods">HandlerMapping Constructors</h3>
+              <div class="methods-container">
+                <ul class="methods-toc">
+                  <li class="method private">
+                    <a class="methods-toc__entry " href="#HandlerMapping.HandlerMapping">
+                      HandlerMapping (handlerClassName, patternStr)
+                    </a>
+
+                  </li>
+                </ul>
+                <div class="method private">
+                  <h4 class="method-title " id="HandlerMapping.HandlerMapping">
+
+                    <a target="_blank" rel="noopener noreferrer" title="Go to source" class="source-link" href="https://github.com/no-stack-dub-sack/apexdox-sample-app/tree/master/force-app/main/default/classes/HandlerMapping.cls#L29">
+                      HandlerMapping(handlerClassName, patternStr)
+                    </a>
+                  </h4>
+                  <div class="method-subtitle">
+                    Signature
+                  </div>
+
+                  <div class="method-signature">
+                    public HandlerMapping(String handlerClassName, String patternStr)
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="subsection methods">
+              <h3 class="subsection-title methods">HandlerMapping Methods</h3>
+              <div class="methods-container">
+                <ul class="methods-toc">
+                  <li class="method private">
+                    <a class="methods-toc__entry " href="#HandlerMapping.mappings.add">
+                      mappings.add (HandlerMapping(command.apex_class__c)
+                    </a>
+
+                    <div class="methods-toc__description">
+                      A list of <code class="code-inline">HandlerMapping</code> instances.
+                    </div>
+                  </li>
+                </ul>
+                <div class="method private">
+                  <h4 class="method-title " id="HandlerMapping.mappings.add">
+
+                    <a target="_blank" rel="noopener noreferrer" title="Go to source" class="source-link" href="https://github.com/no-stack-dub-sack/apexdox-sample-app/tree/master/force-app/main/default/classes/HandlerMapping.cls#L46">
+                      mappings.add(HandlerMapping(command.apex_class__c)
+                    </a>
+                  </h4>
+                  <div class="method-description">
+                    A list of <code class="code-inline">HandlerMapping</code> instances.
+                  </div>
+                  <div class="method-subtitle">
+                    Signature
+                  </div>
+
+                  <div class="method-signature">
+                    mappings.add(new HandlerMapping(command.apex_class__c, command.pattern__c))
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="footer">
+
+          <div>
+            <a href="https://github.com/no-stack-dub-sack/apexdox-vscode" target="_blank" rel="noopener noreferrer">
+              Powered By ApexDox VS Code
+            </a>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </body>
+
+</html>

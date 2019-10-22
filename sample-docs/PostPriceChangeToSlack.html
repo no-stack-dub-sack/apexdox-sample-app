@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>ApexDox Sample Project</title>
+    <meta charset="UTF-8">
+    <script type="module" src="./assets/index.js"></script>
+    <script type="module" src="./assets/search-idx.js"></script>
+    <script type="module" src="./assets/search.js"></script>
+    <script charset="UTF-8" src="./assets/highlight.js"></script>
+    <script charset="UTF-8" src="./assets/mark.js"></script>
+    <script charset="UTF-8" src="./assets/lunr.js"></script>
+    <link rel="stylesheet" href="./assets/highlight.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/index.css" />
+    <link rel="shortcut icon" type="image/png" href="./assets/favicon.png" />
+  </head>
+
+  <body>
+    <div id="side-bar">
+
+      <div id="logo-container">
+        <div class="title">
+          ApexDox Sample Project
+        </div>
+        <img src="assets/logo.png" />
+        <div class="subtitle">
+          Replace this logo, title and subtitle using custom settings.
+        </div>
+      </div>
+      <div id="search-wrapper">
+        <div class="search-icon"></div>
+        <input id="search-input" type="text" autocomplete="off" placeholder="Search...">
+      </div>
+      <ul id="search-results" class=""></ul>
+      <div class="navbar">
+        <nav role="navigation">
+          <a class="nav-header" id="home" href="javascript:void(0)" onclick="goToLocation('index.html');">
+            Home
+          </a>
+          <details id="Dreamhouse_Analytics" class="group-name">
+            <summary id="header-Dreamhouse_Analytics" class="nav-header">
+              <span>Dreamhouse Analytics</span>
+            </summary>
+            <ul>
+              <!-- menu items -->
+              <li title="EinsteinVisionController" id="item-EinsteinVisionController" class="nav-item class global" onclick="goToLocation('EinsteinVisionController.html');">
+                <a tabindex="1" href="javascript:void(0)">EinsteinVisionController</a>
+              </li>
+            </ul>
+          </details>
+          <details id="Dreamhouse_Bot" class="group-name">
+            <summary id="header-Dreamhouse_Bot" class="nav-header">
+              <a href="javascript:void(0)" title="See Class Group info" onclick="goToLocation('Bot.html');">Dreamhouse Bot</a>
+            </summary>
+            <ul>
+              <!-- menu items -->
+              <li title="BotController" id="item-BotController" class="nav-item class public" onclick="goToLocation('BotController.html');">
+                <a tabindex="1" href="javascript:void(0)">BotController</a>
+              </li>
+              <li title="BotField" id="item-BotField" class="nav-item class public" onclick="goToLocation('BotField.html');">
+                <a tabindex="1" href="javascript:void(0)">BotField</a>
+              </li>
+              <li title="BotHandler" id="item-BotHandler" class="nav-item class public" onclick="goToLocation('BotHandler.html');">
+                <a tabindex="1" href="javascript:void(0)">BotHandler</a>
+              </li>
+              <li title="BotItem" id="item-BotItem" class="nav-item class public" onclick="goToLocation('BotItem.html');">
+                <a tabindex="1" href="javascript:void(0)">BotItem</a>
+              </li>
+              <li title="BotMessage" id="item-BotMessage" class="nav-item class public" onclick="goToLocation('BotMessage.html');">
+                <a tabindex="1" href="javascript:void(0)">BotMessage</a>
+              </li>
+              <li title="BotMessageButton" id="item-BotMessageButton" class="nav-item class public" onclick="goToLocation('BotMessageButton.html');">
+                <a tabindex="1" href="javascript:void(0)">BotMessageButton</a>
+              </li>
+              <li title="BotRecord" id="item-BotRecord" class="nav-item class public" onclick="goToLocation('BotRecord.html');">
+                <a tabindex="1" href="javascript:void(0)">BotRecord</a>
+              </li>
+              <li title="BotResponse" id="item-BotResponse" class="nav-item class public" onclick="goToLocation('BotResponse.html');">
+                <a tabindex="1" href="javascript:void(0)">BotResponse</a>
+              </li>
+            </ul>
+          </details>
+          <details id="Dreamhouse_Bot_Handlers" class="group-name">
+            <summary id="header-Dreamhouse_Bot_Handlers" class="nav-header">
+              <span>Dreamhouse Bot Handlers</span>
+            </summary>
+            <ul>
+              <!-- menu items -->
+              <li title="HandlerAddTwoNumbers" id="item-HandlerAddTwoNumbers" class="nav-item class public" onclick="goToLocation('HandlerAddTwoNumbers.html');">
+                <a tabindex="1" href="javascript:void(0)">HandlerAddTwoNumbers</a>
+              </li>
+              <li title="HandlerCostCenter" id="item-HandlerCostCenter" class="nav-item class public" onclick="goToLocation('HandlerCostCenter.html');">
+                <a tabindex="1" href="javascript:void(0)">HandlerCostCenter</a>
+              </li>
+              <li title="HandlerDashboard" id="item-HandlerDashboard" class="nav-item class public" onclick="goToLocation('HandlerDashboard.html');">
+                <a tabindex="1" href="javascript:void(0)">HandlerDashboard</a>
+              </li>
+              <li title="HandlerEmployeeId" id="item-HandlerEmployeeId" class="nav-item class public" onclick="goToLocation('HandlerEmployeeId.html');">
+                <a tabindex="1" href="javascript:void(0)">HandlerEmployeeId</a>
+              </li>
+              <li title="HandlerFileUpload" id="item-HandlerFileUpload" class="nav-item class public" onclick="goToLocation('HandlerFileUpload.html');">
+                <a tabindex="1" href="javascript:void(0)">HandlerFileUpload</a>
+              </li>
+              <li title="HandlerFindAccount" id="item-HandlerFindAccount" class="nav-item class public" onclick="goToLocation('HandlerFindAccount.html');">
+                <a tabindex="1" href="javascript:void(0)">HandlerFindAccount</a>
+              </li>
+              <li title="HandlerFindContact" id="item-HandlerFindContact" class="nav-item class public" onclick="goToLocation('HandlerFindContact.html');">
+                <a tabindex="1" href="javascript:void(0)">HandlerFindContact</a>
+              </li>
+              <li title="HandlerFindProperties" id="item-HandlerFindProperties" class="nav-item class public" onclick="goToLocation('HandlerFindProperties.html');">
+                <a tabindex="1" href="javascript:void(0)">HandlerFindProperties</a>
+              </li>
+              <li title="HandlerFindPropertiesByBedrooms" id="item-HandlerFindPropertiesByBedrooms" class="nav-item class public" onclick="goToLocation('HandlerFindPropertiesByBedrooms.html');">
+                <a tabindex="1" href="javascript:void(0)">HandlerFindPropertiesByBedrooms</a>
+              </li>
+              <li title="HandlerHello" id="item-HandlerHello" class="nav-item class public" onclick="goToLocation('HandlerHello.html');">
+                <a tabindex="1" href="javascript:void(0)">HandlerHello</a>
+              </li>
+              <li title="HandlerHelp" id="item-HandlerHelp" class="nav-item class public" onclick="goToLocation('HandlerHelp.html');">
+                <a tabindex="1" href="javascript:void(0)">HandlerHelp</a>
+              </li>
+              <li title="HandlerHelpTopic" id="item-HandlerHelpTopic" class="nav-item class public" onclick="goToLocation('HandlerHelpTopic.html');">
+                <a tabindex="1" href="javascript:void(0)">HandlerHelpTopic</a>
+              </li>
+              <li title="HandlerImageBasedSearch" id="item-HandlerImageBasedSearch" class="nav-item class public" onclick="goToLocation('HandlerImageBasedSearch.html');">
+                <a tabindex="1" href="javascript:void(0)">HandlerImageBasedSearch</a>
+              </li>
+              <li title="HandlerMyOpenCases" id="item-HandlerMyOpenCases" class="nav-item class public" onclick="goToLocation('HandlerMyOpenCases.html');">
+                <a tabindex="1" href="javascript:void(0)">HandlerMyOpenCases</a>
+              </li>
+              <li title="HandlerNext" id="item-HandlerNext" class="nav-item class public" onclick="goToLocation('HandlerNext.html');">
+                <a tabindex="1" href="javascript:void(0)">HandlerNext</a>
+              </li>
+              <li title="HandlerPipeline" id="item-HandlerPipeline" class="nav-item class public" onclick="goToLocation('HandlerPipeline.html');">
+                <a tabindex="1" href="javascript:void(0)">HandlerPipeline</a>
+              </li>
+              <li title="HandlerQuarter" id="item-HandlerQuarter" class="nav-item class public" onclick="goToLocation('HandlerQuarter.html');">
+                <a tabindex="1" href="javascript:void(0)">HandlerQuarter</a>
+              </li>
+              <li title="HandlerReport" id="item-HandlerReport" class="nav-item class public" onclick="goToLocation('HandlerReport.html');">
+                <a tabindex="1" href="javascript:void(0)">HandlerReport</a>
+              </li>
+              <li title="HandlerSOQL" id="item-HandlerSOQL" class="nav-item class public" onclick="goToLocation('HandlerSOQL.html');">
+                <a tabindex="1" href="javascript:void(0)">HandlerSOQL</a>
+              </li>
+              <li title="HandlerTopOpportunities" id="item-HandlerTopOpportunities" class="nav-item class public" onclick="goToLocation('HandlerTopOpportunities.html');">
+                <a tabindex="1" href="javascript:void(0)">HandlerTopOpportunities</a>
+              </li>
+              <li title="HandlerTravelApproval" id="item-HandlerTravelApproval" class="nav-item class public" onclick="goToLocation('HandlerTravelApproval.html');">
+                <a tabindex="1" href="javascript:void(0)">HandlerTravelApproval</a>
+              </li>
+            </ul>
+          </details>
+          <details id="Dreamhouse_Slack_Bot" class="group-name">
+            <summary id="header-Dreamhouse_Slack_Bot" class="nav-header">
+              <span>Dreamhouse Slack Bot</span>
+            </summary>
+            <ul>
+              <!-- menu items -->
+              <li title="PostPriceChangeToSlack" id="item-PostPriceChangeToSlack" class="nav-item class public" onclick="goToLocation('PostPriceChangeToSlack.html');">
+                <a tabindex="1" href="javascript:void(0)">PostPriceChangeToSlack</a>
+              </li>
+              <li title="PushPriceChangeNotification" id="item-PushPriceChangeNotification" class="nav-item class public" onclick="goToLocation('PushPriceChangeNotification.html');">
+                <a tabindex="1" href="javascript:void(0)">PushPriceChangeNotification</a>
+              </li>
+              <li title="SlackOpportunityPublisher" id="item-SlackOpportunityPublisher" class="nav-item class public" onclick="goToLocation('SlackOpportunityPublisher.html');">
+                <a tabindex="1" href="javascript:void(0)">SlackOpportunityPublisher</a>
+              </li>
+            </ul>
+          </details>
+          <details id="Dreamhouse_Utils" class="group-name">
+            <summary id="header-Dreamhouse_Utils" class="nav-header">
+              <span>Dreamhouse Utils</span>
+            </summary>
+            <ul>
+              <!-- menu items -->
+              <li title="HttpFormBuilder" id="item-HttpFormBuilder" class="nav-item class public" onclick="goToLocation('HttpFormBuilder.html');">
+                <a tabindex="1" href="javascript:void(0)">HttpFormBuilder</a>
+              </li>
+              <li title="JWT" id="item-JWT" class="nav-item class public" onclick="goToLocation('JWT.html');">
+                <a tabindex="1" href="javascript:void(0)">JWT</a>
+              </li>
+              <li title="JWTBearerFlow" id="item-JWTBearerFlow" class="nav-item class public" onclick="goToLocation('JWTBearerFlow.html');">
+                <a tabindex="1" href="javascript:void(0)">JWTBearerFlow</a>
+              </li>
+            </ul>
+          </details>
+          <details id="Global_Utils" class="group-name">
+            <summary id="header-Global_Utils" class="nav-header">
+              <span>Global Utils</span>
+            </summary>
+            <ul>
+              <!-- menu items -->
+              <li title="ApexDox" id="item-ApexDox" class="nav-item class public" onclick="goToLocation('ApexDox.html');">
+                <a tabindex="1" href="javascript:void(0)">ApexDox</a>
+              </li>
+              <li title="ArrayUtils" id="item-ArrayUtils" class="nav-item class global" onclick="goToLocation('ArrayUtils.html');">
+                <a tabindex="1" href="javascript:void(0)">ArrayUtils</a>
+              </li>
+              <li title="IllegalStateException" id="item-IllegalStateException" class="nav-item class global" onclick="goToLocation('IllegalStateException.html');">
+                <a tabindex="1" href="javascript:void(0)">IllegalStateException</a>
+              </li>
+              <li title="IObjectComparator" id="item-IObjectComparator" class="nav-item class global" onclick="goToLocation('IObjectComparator.html');">
+                <a tabindex="1" href="javascript:void(0)">IObjectComparator</a>
+              </li>
+              <li title="ISObjectComparator" id="item-ISObjectComparator" class="nav-item class global" onclick="goToLocation('ISObjectComparator.html');">
+                <a tabindex="1" href="javascript:void(0)">ISObjectComparator</a>
+              </li>
+              <li title="MyRestResource" id="item-MyRestResource" class="nav-item class global" onclick="goToLocation('MyRestResource.html');">
+                <a tabindex="1" href="javascript:void(0)">MyRestResource</a>
+              </li>
+              <li title="MyWebService" id="item-MyWebService" class="nav-item class global" onclick="goToLocation('MyWebService.html');">
+                <a tabindex="1" href="javascript:void(0)">MyWebService</a>
+              </li>
+              <li title="PrimitiveComparator" id="item-PrimitiveComparator" class="nav-item class global" onclick="goToLocation('PrimitiveComparator.html');">
+                <a tabindex="1" href="javascript:void(0)">PrimitiveComparator</a>
+              </li>
+              <li title="Status" id="item-Status" class="nav-item class public" onclick="goToLocation('Status.html');">
+                <a tabindex="1" href="javascript:void(0)">Status</a>
+              </li>
+              <li title="StopWatch" id="item-StopWatch" class="nav-item class global" onclick="goToLocation('StopWatch.html');">
+                <a tabindex="1" href="javascript:void(0)">StopWatch</a>
+              </li>
+            </ul>
+          </details>
+          <details id="Miscellaneous" class="group-name">
+            <summary id="header-Miscellaneous" class="nav-header">
+              <span>Miscellaneous</span>
+            </summary>
+            <ul>
+              <!-- menu items -->
+              <li title="LIFXController" id="item-LIFXController" class="nav-item class public" onclick="goToLocation('LIFXController.html');">
+                <a tabindex="1" href="javascript:void(0)">LIFXController</a>
+              </li>
+              <li title="PropertyController" id="item-PropertyController" class="nav-item class global" onclick="goToLocation('PropertyController.html');">
+                <a tabindex="1" href="javascript:void(0)">PropertyController</a>
+              </li>
+              <li title="PropertyListPage" id="item-PropertyListPage" class="nav-item class public" onclick="goToLocation('PropertyListPage.html');">
+                <a tabindex="1" href="javascript:void(0)">PropertyListPage</a>
+              </li>
+              <li title="SampleDataController" id="item-SampleDataController" class="nav-item class public" onclick="goToLocation('SampleDataController.html');">
+                <a tabindex="1" href="javascript:void(0)">SampleDataController</a>
+              </li>
+            </ul>
+          </details>
+        </nav>
+      </div>
+    </div>
+    <table id="content">
+      <tr>
+        <td class="scoping-panel">
+          Show: <input type="checkbox" checked="true" id="cbx-all" onclick="toggleAllScopes(this.checked);" />
+          <label for="cbx-all">All</label>&nbsp;&nbsp;
+          <input type="checkbox" checked="true" id="cbx-global" onclick="toggleScope('global', this.checked);" />
+          <label for="cbx-global">
+            global
+          </label>&nbsp;&nbsp;<input type="checkbox" checked="true" id="cbx-public" onclick="toggleScope('public', this.checked);" />
+          <label for="cbx-public">
+            public
+          </label>&nbsp;&nbsp;<input type="checkbox" checked="true" id="cbx-protected" onclick="toggleScope('protected', this.checked);" />
+          <label for="cbx-protected">
+            protected
+          </label>&nbsp;&nbsp;<input type="checkbox" checked="true" id="cbx-private" onclick="toggleScope('private', this.checked);" />
+          <label for="cbx-private">
+            private
+          </label>&nbsp;&nbsp;<input type="checkbox" checked="true" id="cbx-webservice" onclick="toggleScope('webservice', this.checked);" />
+          <label for="cbx-webservice">
+            webService
+          </label>&nbsp;&nbsp;<input type="checkbox" checked="true" id="cbx-testmethod" onclick="toggleScope('testmethod', this.checked);" />
+          <label for="cbx-testmethod">
+            testMethod
+          </label>
+        </td>
+      </tr>
+      <tr>
+        <td class="doc-page">
+
+          <div class="section">
+
+            <h2 class="class-title top-level-type" id="PostPriceChangeToSlack">
+
+              <a target="_blank" rel="noopener noreferrer" title="Go to source" class="source-link" href="https://github.com/no-stack-dub-sack/apexdox-sample-app/tree/master/force-app/main/default/classes/PostPriceChangeToSlack.cls#L12">
+                PostPriceChangeToSlack
+              </a>
+            </h2>
+            <div class="class-container">
+
+              <div class="class-description">
+                The <code class="code-inline">PostPriceChangeToSlack</code> class. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad veniam, quis nostrud exercitation ullamco laboris nis.
+              </div>
+              <div class="class-subtitle">
+                Signature
+              </div>
+
+              <div class="class-signature">
+                public class PostPriceChangeToSlack
+              </div>
+              <div class="class-subtitle">
+                See
+              </div>
+              <div class="class-subtitle-description">
+                <a target="_blank" rel="noopener noreferrer" href="https://github.com/dreamhouseapp/dreamhouse-sfdx/blob/master/LICENSE">License</a>, <a target="_blank" rel="noopener noreferrer" href="https://github.com/dreamhouseapp/dreamhouse-sfdx">Github</a>
+              </div><br />Salesforce.com<br />Jul 2017
+            </div>
+            <div class="subsection enums">
+              <h3 class="subsection-title enums">Enums</h2>
+                <table class="attributes-table enums">
+
+                  <tr>
+                    <th>Name</th>
+                    <th>Signature</th>
+                    <th>Values</th>
+                    <th>Description</th>
+                  </tr>
+                  <tr class="enum public">
+                    <td class="attribute-name">
+                      <a target="_blank" rel="noopener noreferrer" title="Go to source" class="source-link" href="https://github.com/no-stack-dub-sack/apexdox-sample-app/tree/master/force-app/main/default/classes/PostPriceChangeToSlack.cls#L64">
+                        Days
+                      </a></td>
+                    <td>
+                      <div class="attribute-signature">
+                        public enum Days
+                      </div>
+                    </td>
+                    <td class="enum-values">MONDAY,&nbsp;TUESDAY,&nbsp;WEDNESDAY,&nbsp;THURSDAY,&nbsp;FRIDAY,&nbsp;SATURDAY,&nbsp;SUNDAY</td>
+
+                    <td class="attribute-description">
+                      An inner enum added to demonstrate how ApexDox VS Code handles inner enums. They will be presented in a table and can only have description&#39;s, like properties.
+                    </td>
+                  </tr>
+                  <tr class="enum public">
+                    <td class="attribute-name">
+                      <a target="_blank" rel="noopener noreferrer" title="Go to source" class="source-link" href="https://github.com/no-stack-dub-sack/apexdox-sample-app/tree/master/force-app/main/default/classes/PostPriceChangeToSlack.cls#L49">
+                        Months
+                      </a></td>
+                    <td>
+                      <div class="attribute-signature">
+                        public enum Months
+                      </div>
+                    </td>
+                    <td class="enum-values">JANUARY,&nbsp;FEBRUARY,&nbsp;MARCH,&nbsp;APRIL,&nbsp;MAY,&nbsp;JUNE,&nbsp;JULY,&nbsp;AUGUST,&nbsp;SEPTEMBER,&nbsp;OCTOBER,&nbsp;NOVEMBER,&nbsp;DECEMBER</td>
+
+                    <td class="attribute-description">
+                      An inner enum added to demonstrate how ApexDox VS Code handles inner enums. They can only have description&#39;s, like properties. ApexDox Should be able to handle to wonky way this enum is written in code.
+                    </td>
+                  </tr>
+                  <tr class="enum public">
+                    <td class="attribute-name">
+                      <a target="_blank" rel="noopener noreferrer" title="Go to source" class="source-link" href="https://github.com/no-stack-dub-sack/apexdox-sample-app/tree/master/force-app/main/default/classes/PostPriceChangeToSlack.cls#L79">
+                        Numbers
+                      </a></td>
+                    <td>
+                      <div class="attribute-signature">
+                        public enum Numbers
+                      </div>
+                    </td>
+                    <td class="enum-values">ONE,&nbsp;TWO,&nbsp;THREE,&nbsp;FOUR,&nbsp;FIVE,&nbsp;SIX,&nbsp;SEVEN,&nbsp;EIGHT,&nbsp;NINE,&nbsp;TEN</td>
+
+                    <td class="attribute-description">
+                      An inner enum added to demonstrate how ApexDox VS Code handles inner enums. They will be presented in a table and can only have description&#39;s, like properties.
+                    </td>
+                  </tr>
+                </table>
+            </div>
+            <div class="subsection methods">
+              <h3 class="subsection-title methods">PostPriceChangeToSlack Methods</h3>
+              <div class="methods-container">
+                <ul class="methods-toc">
+                  <li class="method public">
+                    <a class="methods-toc__entry " href="#PostPriceChangeToSlack.postToSlack">
+                      postToSlack (propertyId)
+                    </a>
+
+                    <div class="methods-toc__description">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad veniam, quis nostrud exercitation ullamco laboris nis.
+                    </div>
+                  </li>
+                </ul>
+                <div class="method public">
+                  <h4 class="method-title " id="PostPriceChangeToSlack.postToSlack">
+
+                    <a target="_blank" rel="noopener noreferrer" title="Go to source" class="source-link" href="https://github.com/no-stack-dub-sack/apexdox-sample-app/tree/master/force-app/main/default/classes/PostPriceChangeToSlack.cls#L20">
+                      postToSlack(propertyId)
+                    </a>
+                  </h4>
+                  <div class="method-description">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad veniam, quis nostrud exercitation ullamco laboris nis.
+                  </div>
+                  <div class="method-subtitle">
+                    Signature
+                  </div>
+                  <div class="method-annotations">@InvocableMethod(label='Post Price Change Notification to Slack')</div>
+                  <div class="method-signature">
+                    public static void postToSlack(List&lt;Id&gt; propertyId)
+                  </div>
+                  <div class="method-subtitle">Parameters</div>
+                  <div class="param-name">propertyId</div>
+                  <div class="param-type">
+                    Type: <code class="code-inline">List&lt;Id&gt;</code>
+                  </div>
+                  <div class="param-description">A list of property IDs to post to Slack.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="section">
+
+            <h2 class="class-title " id="PostPriceChangeToSlack.QueueableSlackCall">
+
+              <a target="_blank" rel="noopener noreferrer" title="Go to source" class="source-link" href="https://github.com/no-stack-dub-sack/apexdox-sample-app/tree/master/force-app/main/default/classes/PostPriceChangeToSlack.cls#L105">
+                PostPriceChangeToSlack.QueueableSlackCall
+              </a>
+            </h2>
+            <div class="class-container">
+
+              <div class="class-description">
+                A good example of how ApexDox VS Code handles inner classes. Inner classes / interfaces support the same tags as their top-level counterparts (i.e. top level type in a .cls file), but tags like &#39;author&#39; and &#39;since&#39; are better left to the top-level class. Just for example&#39;s sake, including an example tag here as well.
+              </div>
+              <div class="class-subtitle">
+                Signature
+              </div>
+
+              <div class="class-signature">
+                public class QueueableSlackCall implements System.Queueable, Database.AllowsCallouts
+              </div>
+              <div class="class-subtitle">
+                Example
+              </div>
+              <pre class="code-example"><code> Dreamhouse_Settings__c settings = Dreamhouse_Settings__c.getOrgDefaults(); 
+ String slackUrl = settings.Slack_Property_Webhook_URL__c; 
+ String body = &#39;This is a message, equeued up to be posted on Slack!&#39;; 
+ System.enqueueJob(new QueueableSlackCall(slackURL, &#39;POST&#39;, body));</code></pre>
+            </div>
+            <div class="subsection properties PostPriceChangeToSlack_QueueableSlackCall">
+              <h3 class="subsection-title properties">PostPriceChangeToSlack.QueueableSlackCall Properties</h2>
+                <table class="attributes-table properties">
+
+                  <tr>
+                    <th>Name</th>
+                    <th>Signature</th>
+
+
+                  </tr>
+                  <tr class="property private">
+                    <td class="attribute-name">
+                      <a target="_blank" rel="noopener noreferrer" title="Go to source" class="source-link" href="https://github.com/no-stack-dub-sack/apexdox-sample-app/tree/master/force-app/main/default/classes/PostPriceChangeToSlack.cls#L109">
+                        body
+                      </a></td>
+                    <td>
+                      <div class="attribute-signature">
+                        private final String body
+                      </div>
+                    </td>
+
+
+                  </tr>
+                  <tr class="property private">
+                    <td class="attribute-name">
+                      <a target="_blank" rel="noopener noreferrer" title="Go to source" class="source-link" href="https://github.com/no-stack-dub-sack/apexdox-sample-app/tree/master/force-app/main/default/classes/PostPriceChangeToSlack.cls#L108">
+                        method
+                      </a></td>
+                    <td>
+                      <div class="attribute-signature">
+                        private final String method
+                      </div>
+                    </td>
+
+
+                  </tr>
+                  <tr class="property private">
+                    <td class="attribute-name">
+                      <a target="_blank" rel="noopener noreferrer" title="Go to source" class="source-link" href="https://github.com/no-stack-dub-sack/apexdox-sample-app/tree/master/force-app/main/default/classes/PostPriceChangeToSlack.cls#L107">
+                        url
+                      </a></td>
+                    <td>
+                      <div class="attribute-signature">
+                        private final String url
+                      </div>
+                    </td>
+
+
+                  </tr>
+                </table>
+            </div>
+            <div class="subsection methods">
+              <h3 class="subsection-title methods">PostPriceChangeToSlack.QueueableSlackCall Constructors</h3>
+              <div class="methods-container">
+                <ul class="methods-toc">
+                  <li class="method public">
+                    <a class="methods-toc__entry " href="#PostPriceChangeToSlack.QueueableSlackCall.QueueableSlackCall">
+                      QueueableSlackCall (url, method, body)
+                    </a>
+
+                  </li>
+                </ul>
+                <div class="method public">
+                  <h4 class="method-title " id="PostPriceChangeToSlack.QueueableSlackCall.QueueableSlackCall">
+
+                    <a target="_blank" rel="noopener noreferrer" title="Go to source" class="source-link" href="https://github.com/no-stack-dub-sack/apexdox-sample-app/tree/master/force-app/main/default/classes/PostPriceChangeToSlack.cls#L116">
+                      QueueableSlackCall(url, method, body)
+                    </a>
+                  </h4>
+                  <div class="method-subtitle">
+                    Signature
+                  </div>
+
+                  <div class="method-signature">
+                    public QueueableSlackCall(String url, String method, String body)
+                  </div>
+                  <div class="method-subtitle">Parameters</div>
+                  <div class="param-name">url</div>
+                  <div class="param-type">
+                    Type: <code class="code-inline">String</code>
+                  </div>
+                  <div class="param-description">The Slack Url to post the message to.</div>
+                  <div class="param-name">method</div>
+                  <div class="param-type">
+                    Type: <code class="code-inline">String</code>
+                  </div>
+                  <div class="param-description">The HTTP method to use</div>
+                  <div class="param-name">body</div>
+                  <div class="param-type">
+                    Type: <code class="code-inline">String</code>
+                  </div>
+                  <div class="param-description">The body of the message.</div>
+                </div>
+              </div>
+            </div>
+            <div class="subsection methods">
+              <h3 class="subsection-title methods">PostPriceChangeToSlack.QueueableSlackCall Methods</h3>
+              <div class="methods-container">
+                <ul class="methods-toc">
+                  <li class="method public">
+                    <a class="methods-toc__entry " href="#PostPriceChangeToSlack.QueueableSlackCall.execute">
+                      execute (ctx)
+                    </a>
+
+                    <div class="methods-toc__description">
+                      The execute method implements the <code class="code-inline">System.Queueable</code> interface. And handle&#39;s the queueable&#39;s execution.
+                    </div>
+                  </li>
+                </ul>
+                <div class="method public">
+                  <h4 class="method-title " id="PostPriceChangeToSlack.QueueableSlackCall.execute">
+
+                    <a target="_blank" rel="noopener noreferrer" title="Go to source" class="source-link" href="https://github.com/no-stack-dub-sack/apexdox-sample-app/tree/master/force-app/main/default/classes/PostPriceChangeToSlack.cls#L127">
+                      execute(ctx)
+                    </a>
+                  </h4>
+                  <div class="method-description">
+                    The execute method implements the <code class="code-inline">System.Queueable</code> interface. And handle&#39;s the queueable&#39;s execution.
+                  </div>
+                  <div class="method-subtitle">
+                    Signature
+                  </div>
+
+                  <div class="method-signature">
+                    public void execute(System.QueueableContext ctx)
+                  </div>
+                  <div class="method-subtitle">Parameters</div>
+                  <div class="param-name">ctx</div>
+                  <div class="param-type">
+                    Type: <code class="code-inline">System.QueueableContext</code>
+                  </div>
+                  <div class="param-description">The <code class="code-inline">System.QueueableContext</code> for the execute method.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="footer">
+
+          <div>
+            <a href="https://github.com/no-stack-dub-sack/apexdox-vscode" target="_blank" rel="noopener noreferrer">
+              Powered By ApexDox VS Code
+            </a>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </body>
+
+</html>

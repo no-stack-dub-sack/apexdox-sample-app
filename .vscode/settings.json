@@ -1,0 +1,72 @@
+{
+    // NOTE: if .apexdoxrc or apexdox.yml files are enabled, the will take precedence over this file!
+    
+    // ${workspaceFolder} is equivalent to the project's root directory
+    // NOTE: this settings variable is an apexdox-vs-code feature, and is
+    // not native to VSCode. It will not work for other VSCode settings.
+
+    // the source files to document, with their source-code links
+    "apexdox.engine.source": [
+        {
+            "path": "${workspaceFolder}/force-app/main/default/classes",
+            "sourceUrl": "https://github.com/no-stack-dub-sack/apexdox-sample-app/tree/master/force-app/main/default/classes"
+        },
+        {
+            "path": "${workspaceFolder}/force-app/global-utils/default/classes",
+            "sourceUrl": "https://github.com/no-stack-dub-sack/apexdox-sample-app/tree/master/force-app/global-utils/default/classes"
+        }
+    ],
+
+    // where our docs should be created. The folder will be created if it doesn't exist
+    "apexdox.engine.targetDirectory": "${workspaceFolder}/sample-docs",
+
+    // the HTML's <title> attribute value
+    "apexdox.engine.title": "ApexDox Sample Project",
+    "apexdox.engine.subtitle": "Replace this logo, title and subtitle using custom settings.",
+
+    // exclude test classes from docs
+    "apexdox.engine.excludes": [ "*Test.cls" ],
+
+    // display our methods, inner classes, enums, etc. in the
+    // order in which they appear in code, not in alphabetical order
+    "apexdox.engine.sortOrder": "alpha",
+
+    // DO NOT clean up the target directory on each run
+    // we need to preserve our CNAME file for surge
+    "apexdox.engine.cleanDir": false,
+
+    // I think the TOC snippets are ugly, so I hide them
+    "apexdox.engine.showTOCSnippets": true,
+
+    // the scopes / access modifier levels to document
+    "apexdox.engine.scope": [
+        "global",
+        "public",
+        "protected",
+        "private",
+        "webService",
+        "testMethod"
+    ],
+
+    // assets and HTML files
+    "apexdox.engine.homePagePath": "${workspaceFolder}/doc-assets/Dreamhouse.html",
+
+    "apexdox.engine.pages": [
+        "${workspaceFolder}/doc-assets/Funny.html"
+    ],
+    "apexdox.engine.assets": [
+        "${workspaceFolder}/doc-assets/logo.png",
+        "${workspaceFolder}/doc-assets/favicon.png",
+        "${workspaceFolder}/doc-assets/bots-icon.png",
+        "${workspaceFolder}/doc-assets/meme.jpg",
+    ],
+
+    // the port to launch the docs preview on
+    "apexdox.engine.port": 8080,
+
+    // apexdox DocBlock settings:
+    "apexdox.docblock.alignItems": false,
+    "apexdox.docblock.spacious": true,
+    "apexdox.docblock.omitDescriptionTag": true,
+    "eslint.nodePath": "c:\\Users\\pweinberg\\.vscode\\extensions\\salesforce.salesforcedx-vscode-lwc-45.15.1\\node_modules"
+}
